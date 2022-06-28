@@ -8,6 +8,11 @@ SRC=`dirname $FILEPATH`
 #[[ -d /etc/pipewire ]] || sudo mkdir /etc/pipewire/
 #sudo cp -uv $SRC/pipewire/* /etc/pipewire/
 
+# Install home dotfiles
+for f in `ls -A $SRC/home/`; do
+	ln -sfv $SRC/home/$f ~/
+done
+
 # Install config files
 [[ -d ~/.config ]] || mkdir ~/.config/
 
