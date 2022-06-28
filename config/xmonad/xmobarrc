@@ -1,5 +1,5 @@
 Config { font = "xft:Fira Mono:weight=bold:size=8:antialias=true:hinting=true"
-       , additionalFonts = [ "xft:monospace:size=10:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Noto Mono:size=10:antialias=true:hinting=true"
                            -- , "xft:Noto Sans CJK JP:size=8" -- For Japanese text
                            ]
        , bgColor = "#121212"
