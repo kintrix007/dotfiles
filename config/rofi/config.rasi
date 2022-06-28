@@ -1,0 +1,108 @@
+@theme "gruvbox-dark-soft"
+
+* {
+	my-border-color: #555555;
+	my-lines: 5;
+	my-columns: 2;
+	//separatorcolor: #00000000;
+	active-foreground: @normal-foreground;
+	active-background: @normal-background;
+	selected-active-foreground: @selected-normal-foreground;
+	selected-active-background: @selected-normal-background;
+}
+
+window {
+	border-radius: 0;
+	width: 640px;
+	//width: 34%; // For 1080p
+}
+
+inputbar, mode-switcher, button, listview, element, scrollbar, textbox {
+	border-radius: 8;
+}
+
+textbox {
+	font: "Fira Mono 11";
+	margin: 0 12px;
+	padding: 4px 8px;
+	foreground-color: @gruvbox-dark-fg1;
+	background-color: @gruvbox-dark-bg1;
+	//horizontal-align: 0.5;
+}
+
+mainbox {
+	margin: 3px;
+	spacing: 4px;
+}
+
+scrollbar {
+	border: 1px;
+	border-color: @my-border-color;
+}
+
+inputbar {
+	border: 1px 1px 0 1px;
+	border-color: @my-border-color;
+	padding: 4px;
+	//margin: 2px 0;
+}
+
+entry {
+	placeholder: "Type here";
+}
+
+listview {
+	//border-radius: 8px 0 0 8px;
+	border: 1px 0 1px 1px;
+	border-color: @my-border-color;
+	padding: 4px 0 4px 4px;
+	lines: @my-lines;
+	columns: @my-columns;
+	spacing: 4px;
+	//fixed-columns: true;
+}
+
+element {
+	padding: 4px 6px;
+	//children: [ element-icon, element-text ];
+}
+
+element-text {
+	//margin: 0 0 0 0px; 
+}
+
+element-icon {
+	padding: 0 10px 0 0;
+	size: 32px;
+}
+
+element-text {
+	vertical-align: 0.5;
+	//horizontal-align: 0.5;
+}
+
+mode-switcher {
+	border: 0 1px 1px 1px;
+	border-color: @my-border-color;
+	padding: 4px;
+}
+
+button {
+	padding: 2px;
+}
+
+configuration {
+	modi: "combi,calc,filebrowser";
+	combi-modi: "window,drun,ssh,emoji";
+	font: "Fira Mono 12";
+	show-icons: true;
+	// window-thumbnail: true;
+	scroll-method: 0;
+	icon-theme: "Papirus";
+	sidebar-mode: true;
+	display-drun: "🚀";
+	display-window: "💻";
+	display-emoji: ":)";
+	kb-remove-word-back: "Control+Alt+h,Control+BackSpace";
+	kb-remove-word-forward: "Control+Alt+d,Control+Delete";
+}

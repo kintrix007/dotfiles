@@ -1,0 +1,70 @@
+Config { font = "xft:Fira Mono:weight=bold:size=8:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Noto Mono:size=10:antialias=true:hinting=true"
+                           -- , "xft:Noto Sans CJK JP:size=8" -- For Japanese text
+                           ]
+       , bgColor = "#121212"
+       , fgColor = "#bbbbbb"
+       , position = Top
+       , border = FullB
+       , borderColor = "#333333"
+       , allDesktops = True
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " <action=`$TERMINAL -e htop`>%cpu% | %memory%</action> | %eth0% %wlan0wi% | %disku% } %date% { %StdinReader% | <action=`$TERMINAL --hold -e sudo xbps-install -u`>Upd: <fc=#5ae05a>%updates%</fc></action> | <action=`switch-kb-layout`>%kbd%</action> | %battery% | <fc=lightblue>%whoami% @ %hostname%</fc> "
+       , commands =
+           [ Run Cpu      [ "--template" , "CPU: <total>%"
+                          , "--Low"      , "40"
+                          , "--High"     , "70"
+                          , "--low"      , "#5ae05a"
+                          , "--normal"   , "darkorange"
+                          , "--high"     , "#ff3333"
+                          ] 10
+           , Run Memory   [ "--template" , "Mem: <usedratio>%"
+                          , "--Low"      , "35"
+                          , "--High"     , "65"
+                          , "--low"      , "#5ae05a"
+                          , "--normal"   , "darkorange"
+                          , "--high"     , "#ff3333"
+                          ] 10
+
+           , Run Network  "eth0"
+                          [ "--template" , "Eth: <fn=1>⇓</fn><rx> <fn=1>⇑</fn><tx>"
+                          , "--Low"      ,  "3500000"
+                          , "--High"     , "10000000"
+                          , "--low"      , "#5ae05a"
+                          , "--normal"   , "darkorange"
+                          , "--high"     , "#ff3333"
+                          , "-S"         , "True"
+                          ] 10
+           , Run Wireless "wlan0"
+                          [ "--template" , "<qualityvbar>"
+                          , "--Low"      , "40"
+                          , "--High"     , "70"
+                          , "--low"      , "#ff3333"
+                          , "--normal"   , "darkorange"
+                          , "--high"     , "#5ae05a"
+                          ] 10
+           , Run DiskU    [("/", "SSD: <free>")]
+                          [ "--Low"      , "10"
+                          , "--High"     , "35"
+                          , "--low"      , "#ff3333"
+                          , "--normal"   , "darkorange"
+                          , "--high"     , "#5ae05a"
+                          ] 600
+           , Run Battery  [ "--template" , "Bat: <acstatus>"
+                          , "--Low"      , "30"
+                          , "--High"     , "60"
+                          , "--low"      , "#5ae05a"
+                          , "--normal"   , "darkorange"
+                          , "--high"     , "#ff3333"
+                          , "--"
+                          , "-o"         , "<leftvbar>% - (<timeleft>)"
+                          , "-O"         , "<fc=5ae05a>AC</fc>"
+                          , "-i"         , "<fc=#00eeff>AC</fc>"
+                          ] 10
+           , Run Kbd      [ ("hu", "HU"), ("us", "US"), ("jp", "JP"), ("ru", "RU") ]
+           , Run Com      "xbps-updates" [ "--count" ] "updates" 36000
+           , Run Date     "<fc=#777777>%a</fc> %H:%M <fc=#777777>%h %d</fc>" "date" 10
+           , Run StdinReader
+           ]
+       }
