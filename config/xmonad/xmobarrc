@@ -10,7 +10,7 @@ Config { font = "xft:Fira Mono:weight=bold:size=8:antialias=true:hinting=true"
        , allDesktops = True
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <action=`$TERMINAL -e htop`>%cpu% | %memory%</action> | %eth0% %wlan0wi% | %disku% } %date% { %StdinReader% | <action=`$TERMINAL --hold -e sudo xbps-install -u`>Upd: <fc=#5ae05a>%updates%</fc></action> | <action=`switch-kb-layout`>%kbd%</action> | %default:Master% | %battery% | <fc=lightblue>%whoami% @ %hostname%</fc> "
+       , template = " <action=`$TERMINAL -e htop`>%cpu% | %memory%</action> | %eth0% %wlan0wi% | %disku% } %date% { %StdinReader% | <action=`$TERMINAL --hold -e sudo xbps-install -u`>Upd: <fc=#5ae05a>%updates%</fc></action> | <action=`switch-kb-layout`>%kbd%</action> | Vol: <fc=lightblue>%vol%</fc> | %battery% | <fc=lightblue>%whoami% @ %hostname%</fc> "
        , commands =
            [ Run Cpu      [ "--template" , "CPU: <total>%"
                           , "--Low"      , "40"
@@ -62,13 +62,7 @@ Config { font = "xft:Fira Mono:weight=bold:size=8:antialias=true:hinting=true"
                           , "-O"         , "<fc=5ae05a>AC</fc>"
                           , "-i"         , "<fc=#00eeff>AC</fc>"
                           ] 10
-           , Run Volume   "default" "Master"
-                          [ "--template" , "Vol: <volume>%<status>"
-                          , "--normal"   , "lightblue"
-                          , "--"
-                          , "-O", " <fn=1>☓</fn>", "-o", ""
-                          , "-C", "#ff3333", "-c", "#5ae05a"
-                          ] 10
+           , Run Com      "pamixer" [ "--get-volume-human" ] "vol" 10
            , Run Kbd      [ ("hu", "HU"), ("us", "US"), ("jp", "JP"), ("ru", "RU") ]
            , Run Com      "xbps-updates" [ "--count" ] "updates" 36000
            , Run Date     "<fc=#777777>%a</fc> %H:%M <fc=#777777>%h %d</fc>" "date" 10
