@@ -1,0 +1,17 @@
+window:
+  dimensions:
+    columns: 84
+    lines: 24
+  padding:
+    x: 2
+    y: 2
+  dynamic_padding: true
+  opacity: 0.88
+  dynamic_title: true
+font:
+  normal:
+    family: Fira Mono
+  size: 8.0
+  offset:
+    x: 0
+    y: 0
