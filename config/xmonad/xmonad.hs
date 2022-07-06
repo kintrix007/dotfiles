@@ -8,6 +8,7 @@
 --
 
 import XMonad
+import Graphics.X11.ExtraTypes.XF86
 import XMonad.Layout.Gaps
 import XMonad.Layout.Spacing
 import XMonad.Layout.Spiral
@@ -127,6 +128,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Push window back into tiling
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
+
+    -- Lower volume
+    , ((0, xF86XK_AudioLowerVolume   ), spawn "pamixer -d 5")
+
+    -- Raise volume
+    , ((0, xF86XK_AudioRaiseVolume   ), spawn "pamixer -i 5")
+
+    -- Toggle mute
+    , ((0, xF86XK_AudioMute          ), spawn "pamixer --toggle-mute")
 
     -- Increment the number of windows in the master area
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
