@@ -3,7 +3,7 @@
 FILEPATH=`readlink -f ${BASH_SOURCE:-$0}`
 SRC=`dirname $FILEPATH`
 
-# Probably shouldn't be a part of it
+# Probably shouldn't be a part of dotfiles
 # Install pipewire
 #[[ -d /etc/pipewire ]] || sudo mkdir /etc/pipewire/
 #sudo cp -uv $SRC/pipewire/* /etc/pipewire/
@@ -17,7 +17,6 @@ done
 [[ -d ~/.config ]] || mkdir ~/.config/
 
 for f in $SRC/config/*; do
-	fb=`basename $f`
 	ln -sfv $f ~/.config/
 done
 
