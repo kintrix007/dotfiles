@@ -298,6 +298,7 @@ myLogHook h = dynamicLogWithPP $ def
 --
 -- By default, do nothing.
 myStartupHook = do
+    spawnOnce "lxsession &"
     spawnOnce $ "xrandr -s " ++ myResolution
     spawnOnce "xsetroot -solid '#50567a' -cursor_name left_ptr"
 
