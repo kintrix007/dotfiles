@@ -5,10 +5,11 @@
 	my-lines: 5;
 	my-columns: 2;
 	//separatorcolor: #00000000;
-	active-foreground: @normal-foreground;
-	active-background: @normal-background;
-	selected-active-foreground: @selected-normal-foreground;
-	selected-active-background: @selected-normal-background;
+	//active-foreground: @normal-foreground;
+	//active-background: @normal-background;
+	//selected-active-foreground: @selected-normal-foreground;
+	//selected-active-background: @selected-normal-background;
+	//selected-active-background: #fbb86c;
 }
 
 window {
