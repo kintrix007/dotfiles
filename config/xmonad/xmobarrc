@@ -1,5 +1,5 @@
 Config { font = "xft:Fira Mono:weight=bold:size=11:antialias=true:hinting=true"
-       , additionalFonts = [ "xft:Noto Mono:size=10:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Noto Mono:size=15:antialias=true:hinting=true"
                            -- , "xft:Noto Sans CJK JP:size=8" -- For Japanese text
                            ]
        , bgColor = "#121212"
@@ -65,7 +65,7 @@ Config { font = "xft:Fira Mono:weight=bold:size=11:antialias=true:hinting=true"
            , Run Com      "pamixer" [ "--get-volume-human" ] "vol" 5
            , Run Kbd      [ ("hu", "HU"), ("us", "US"), ("jp", "JP"), ("ru", "RU") ]
            , Run Com      "xbps-updates" [ "--count" ] "updates" 36000
-           , Run Date     "<fc=#777777>%a</fc> %H:%M <fc=#777777>%h %d</fc>" "date" 10
+           , Run Date     "   <fc=#777777>%a</fc> %H:%M <fc=#777777>%h %d</fc>" "date" 10
            , Run StdinReader
            ]
        }
