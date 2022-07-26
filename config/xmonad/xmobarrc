@@ -62,7 +62,7 @@ Config { font = "xft:Fira Mono:weight=bold:size=11:antialias=true:hinting=true"
                           , "-O"         , "<leftvbar> <left>% <fc=#5ae05a>Charging...</fc>"
                           , "-i"         , "<leftvbar> <left>% <fc=#5ae05a>Charged</fc>"
                           ] 10
-           , Run Com      "pamixer" [ "--get-volume-human" ] "vol" 10
+           , Run Com      "pamixer" [ "--get-volume-human" ] "vol" 5
            , Run Kbd      [ ("hu", "HU"), ("us", "US"), ("jp", "JP"), ("ru", "RU") ]
            , Run Com      "xbps-updates" [ "--count" ] "updates" 36000
            , Run Date     "<fc=#777777>%a</fc> %H:%M <fc=#777777>%h %d</fc>" "date" 10
