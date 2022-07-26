@@ -1,4 +1,4 @@
-Config { font = "xft:Fira Mono:weight=bold:size=8:antialias=true:hinting=true"
+Config { font = "xft:Fira Mono:weight=bold:size=11:antialias=true:hinting=true"
        , additionalFonts = [ "xft:Noto Mono:size=10:antialias=true:hinting=true"
                            -- , "xft:Noto Sans CJK JP:size=8" -- For Japanese text
                            ]
@@ -59,8 +59,8 @@ Config { font = "xft:Fira Mono:weight=bold:size=8:antialias=true:hinting=true"
                           , "--high"     , "lightblue"
                           , "--"
                           , "-o"         , "<leftvbar> <left>% (<timeleft>)"
-                          , "-O"         , "<fc=5ae05a><leftvbar> <left>% Charging...</fc>"
-                          , "-i"         , "<fc=lightblue><leftvbar> <left>% Charged</fc>"
+                          , "-O"         , "<leftvbar> <left>% <fc=#5ae05a>Charging...</fc>"
+                          , "-i"         , "<leftvbar> <left>% <fc=#5ae05a>Charged</fc>"
                           ] 10
            , Run Com      "pamixer" [ "--get-volume-human" ] "vol" 10
            , Run Kbd      [ ("hu", "HU"), ("us", "US"), ("jp", "JP"), ("ru", "RU") ]
