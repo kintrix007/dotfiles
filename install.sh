@@ -18,6 +18,11 @@ done
 
 for f in $SRC/config/*; do
 	ln -sfv "$f" ~/.config/
+	if [[ -f "$f/.install/install.sh" ]]; then
+		echo "Running '$(basename "$f")' setup scriptlet..."
+		"$f/.install/install.sh" "$f/.install/"
+		echo "Done."
+	fi
 done
 
 # Install local bin
