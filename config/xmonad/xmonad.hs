@@ -300,7 +300,7 @@ myLogHook h = dynamicLogWithPP $ def
 myStartupHook = do
     spawnOnce "lxsession &"
     spawnOnce $ "xrandr -s " ++ myResolution
-    spawnOnce "xsetroot -solid '#50567a' -cursor_name left_ptr"
+    spawnOnce "hsetroot -solid '#50567a' -cursor_name left_ptr"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
