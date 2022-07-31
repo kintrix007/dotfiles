@@ -3,11 +3,11 @@ window:
     columns: 84
     lines: 24
   padding:
-    x: 2
-    y: 2
+    x: 4
+    y: 4
   dynamic_title: true
 font:
-  size: 9.0
+  size: 8.0
   normal:
     family: Fira Mono
   offset:
