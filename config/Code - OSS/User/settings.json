@@ -1,18 +1,5 @@
 {
-  /* "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "/usr/bin/flatpak-spawn",
-      "args": [
-        "--host",
-        "--env=TERM=xterm-256color",
-        "bash"
-      ]
-    }
-  },
-  */
-
-  "workbench.colorTheme": "One Dark Pro",
+  "terminal.integrated.defaultProfile.linux": "bash",
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'Consolas', 'monospace', monospace",
   "editor.fontLigatures": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -29,6 +16,8 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.bracketPairColorization.enabled": true,
   
+  "redhat.telemetry.enabled": false,
+
   "diffEditor.codeLens": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.defaultDateFormat": "YYYY-MM-DD, HH:mm",
@@ -105,5 +94,5 @@
   },
   "editor.snippetSuggestions": "none",
   "mesonbuild.buildFolder": "build",
-  "redhat.telemetry.enabled": true,
+  "workbench.colorTheme": "One Dark Pro",
 }
