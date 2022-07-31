@@ -10,19 +10,19 @@ SRC=`dirname $FILEPATH`
 
 # Install home dotfiles
 for f in `ls -A $SRC/home/`; do
-	ln -sfv $SRC/home/$f ~/
+	ln -sfv "$SRC/home/$f" ~/
 done
 
 # Install config files
 [[ -d ~/.config ]] || mkdir ~/.config/
 
 for f in $SRC/config/*; do
-	ln -sfv $f ~/.config/
+	ln -sfv "$f" ~/.config/
 done
 
 # Install local bin
 [[ -d ~/.local/bin ]] || mkdir ~/.local/bin
 
 for f in $SRC/bin/*; do
-	ln -sfv $f ~/.local/bin/
+	ln -sfv "$f" ~/.local/bin/
 done
