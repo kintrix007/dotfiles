@@ -300,7 +300,8 @@ myLogHook h = dynamicLogWithPP $ def
 myStartupHook = do
     spawnOnce "lxsession &"
     spawnOnce $ "xrandr -s " ++ myResolution
-    spawnOnce "hsetroot -solid '#50567a' -cursor_name left_ptr"
+    spawnOnce "xsetroot -solid '#50567a' -cursor_name left_ptr"
+    spawnOnce "hsetroot -solid '#50567a'" -- picom is not compatible with 'xsetroot -solid'
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
