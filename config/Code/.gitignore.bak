@@ -1,0 +1,32 @@
+# .gitignore
+
+# Ignore all directories except 'User/'
+Backups/
+Cache/
+CachedExtensionVSIXs/
+CachedExtensions/
+Code Cache/
+Cookies
+Cookies-journal
+Crash Reports/
+Crashpad/
+Dictionaries/
+GPUCache/
+Local Storage/
+Network Persistent State
+Preferences
+Service Worker/
+Session Storage/
+TransportSecurity
+WebStorage/
+blob_storage/
+databases/
+languagepacks.json
+logs/
+machineid
+storage.json
+
+# User/
+User/globalStorage/
+User/History/
+User/workspaceStorage/
