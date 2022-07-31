@@ -10,3 +10,6 @@ alias xi='sudo xbps-install'	# Use '\xi' for 'xi' from 'xtools'
 alias xis='sudo xbps-install -S'
 alias xq='xbps-query'		# Use '\xq' for 'xq' from 'xtools'
 alias xr='sudo xbps-remove'
+
+# VSCode OSS alias
+alias code='code-oss'
