@@ -12,7 +12,8 @@
   // "editor.definitionLinkOpensInPeek": true,
   "editor.formatOnPaste": true,
   "editor.suggest.localityBonus": true,
-  "editor.suggestSelection": "recentlyUsed",
+  // "editor.suggestSelection": "recentlyUsed",
+  "editor.suggestSelection": "first",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.bracketPairColorization.enabled": true,
   
@@ -95,4 +96,7 @@
   "editor.snippetSuggestions": "none",
   "mesonbuild.buildFolder": "build",
   "workbench.colorTheme": "One Dark Pro",
+  "cSpell.userWords": [
+    "utilz"
+  ],
 }
