@@ -3,7 +3,7 @@
 FILEPATH=`readlink -f ${BASH_SOURCE:-$0}`
 SRC=`dirname $FILEPATH`
 
-local-install() {
+config-specific-install() {
 	for f in $SRC/config/*; do
 		if [[ -f "$f/.install/install.sh" ]]; then
 			echo "Running '$(basename "$f")' setup scriptlet..."
@@ -21,22 +21,22 @@ fi
 
 # Install home dotfiles
 for f in `ls -A $SRC/home/`; do
-	ln -sfv "$SRC/home/$f" ~/
+	ln -siv "$SRC/home/$f" ~/
 done
 
 # Install config files
 [[ -d ~/.config ]] || mkdir ~/.config/
 
 for f in $SRC/config/*; do
-	ln -sfv "$f" ~/.config/
+	ln -siv "$f" ~/.config/
 done
-
-# Run local installation after all are symlinked
-local-install
 
 # Install local bin
 [[ -d ~/.local/bin ]] || mkdir ~/.local/bin
 
 for f in $SRC/bin/*; do
-	ln -sfv "$f" ~/.local/bin/
+	ln -siv "$f" ~/.local/bin/
 done
+
+# Run local installation after all are symlinked
+config-specific-install
