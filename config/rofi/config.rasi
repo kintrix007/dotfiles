@@ -99,7 +99,7 @@ configuration {
 	show-icons: true;
 	// window-thumbnail: true;
 	scroll-method: 0;
-	hover-select: true;
+	//hover-select: true;
 	me-select-entry: ""; // Disable click-to-select
 	//me-accept-entry: [ MousePrimary, MouseSecondary ];
 	me-accept-entry: [ MousePrimary ];
