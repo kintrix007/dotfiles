@@ -3,10 +3,21 @@
 FILEPATH=`readlink -f ${BASH_SOURCE:-$0}`
 SRC=`dirname $FILEPATH`
 
-# Probably shouldn't be a part of dotfiles
-# Install pipewire
-#[[ -d /etc/pipewire ]] || sudo mkdir /etc/pipewire/
-#sudo cp -uv $SRC/pipewire/* /etc/pipewire/
+local-install() {
+	for f in $SRC/config/*; do
+		if [[ -f "$f/.install/install.sh" ]]; then
+			echo "Running '$(basename "$f")' setup scriptlet..."
+			"$f/.install/install.sh" "$f/.install/"
+			echo "Done."
+		fi
+	done
+
+}
+
+if [[ "$1" == "--local-only" || "$1" == "-l"  ]]; then
+	local-install
+	exit
+fi
 
 # Install home dotfiles
 for f in `ls -A $SRC/home/`; do
@@ -18,12 +29,10 @@ done
 
 for f in $SRC/config/*; do
 	ln -sfv "$f" ~/.config/
-	if [[ -f "$f/.install/install.sh" ]]; then
-		echo "Running '$(basename "$f")' setup scriptlet..."
-		"$f/.install/install.sh" "$f/.install/"
-		echo "Done."
-	fi
 done
+
+# Run local installation after all are symlinked
+local-install
 
 # Install local bin
 [[ -d ~/.local/bin ]] || mkdir ~/.local/bin
