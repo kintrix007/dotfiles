@@ -22,3 +22,6 @@ export EDITOR=vim
 
 # Set console prompt
 PS1='\[\e[1m\][\[\e[92m\]\u\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0;1m\]]$ \[\e[0m\]'
+
+# Hook direnv into the shell
+which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
