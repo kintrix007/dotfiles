@@ -1,10 +1,13 @@
 aaron-bond.better-comments
+arrterian.nix-env-selector
+bbenoist.Nix
 eamodio.gitlens
 eg2.vscode-npm-script
 formulahendry.code-runner
 geequlim.godot-tools
 golang.go
 haskell.haskell
+justusadam.language-haskell
 kosz78.nim
 mesonbuild.mesonbuild
 ms-python.python
@@ -12,6 +15,7 @@ ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
+ms-vscode.cpptools
 nadako.vshaxe
 prince781.vala
 redhat.vscode-yaml
