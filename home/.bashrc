@@ -3,6 +3,8 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[[ -f /etc/bashrc ]] && . /etc/bashrc
+
 # Load user aliases
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
