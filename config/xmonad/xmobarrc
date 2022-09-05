@@ -10,7 +10,7 @@ Config { font = "xft:Fira Mono:weight=bold:size=11:antialias=true:hinting=true"
        , allDesktops = True
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <action=`$TERMINAL -e htop`>%cpu% | %memory%</action> | %disku% | %wlp3s0wi% | %wlp3s0% } %date% { %StdinReader% | <action=`$TERMINAL --hold -e sudo xbps-install -u`>Upd: <fc=#5ae05a>%updates%</fc></action> | <action=`switch-kb-layout`>%kbd%</action> | <action=`set-volume-gui`>Vol: <fc=lightblue>%vol%</fc></action> | %battery% | <action=`rofi -show`><fc=lightblue>%whoami% @ %hostname%</fc></action> "
+       , template = " <action=`$TERMINAL -e htop`>%cpu% | %memory%</action> | %disku% | %wlp3s0wi% | %wlp3s0% } %date% { %StdinReader% | <action=`$TERMINAL --hold -e sudo xbps-install -u`>Upd: <fc=#5ae05a>%updates%</fc></action> | <action=`x-switch-kb-layout`>%kbd%</action> | <action=`set-volume-gui`>Vol: <fc=lightblue>%vol%</fc></action> | %battery% | <action=`rofi -show`><fc=lightblue>%whoami% @ %hostname%</fc></action> "
        , commands =
            [ Run Cpu      [ "--template" , "CPU: <total>%"
                           , "--Low"      , "40"
