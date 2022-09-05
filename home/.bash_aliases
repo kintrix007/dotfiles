@@ -7,7 +7,7 @@ alias ll='ls -lA'
 
 # XBPS aliases
 alias xi='sudo xbps-install'	# Use '\xi' for 'xi' from 'xtools'
-alias xq='xbps-query'			# Use '\xq' for 'xq' from 'xtools'
+alias xq='xbps-query'		# Use '\xq' for 'xq' from 'xtools'
 alias xr='sudo xbps-remove'
 
 # VSCode OSS alias
