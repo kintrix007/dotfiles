@@ -16,7 +16,7 @@ config-specific-install() {
 
 }
 
-if [[ "$1" == "--config" || "$1" == "-c"  ]]; then
+if [[ "$1" == "--config-only" || "$1" == "-c"  ]]; then
 	config-specific-install
 	exit
 fi
@@ -39,6 +39,10 @@ done
 for f in $SRC/bin/*; do
 	ln -siv "$f" ~/.local/bin/
 done
+
+if [[ "$1" == "--link-only" || "$1" == "-l"  ]]; then
+	exit
+fi
 
 # Run local installation after all are symlinked
 config-specific-install
