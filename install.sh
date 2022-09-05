@@ -7,15 +7,17 @@ config-specific-install() {
 	for f in $SRC/config/*; do
 		if [[ -f "$f/.install/install.sh" ]]; then
 			echo "Running '$(basename "$f")' setup scriptlet..."
-			"$f/.install/install.sh" "$f/.install/"
+			pushd "$f/.install" &&\
+			./install.sh
+			popd
 			echo "Done."
 		fi
 	done
 
 }
 
-if [[ "$1" == "--local-only" || "$1" == "-l"  ]]; then
-	local-install
+if [[ "$1" == "--config" || "$1" == "-c"  ]]; then
+	config-specific-install
 	exit
 fi
 
