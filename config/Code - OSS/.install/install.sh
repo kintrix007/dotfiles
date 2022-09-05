@@ -1,7 +1,6 @@
 #!/bin/bash
 
-SRC="$1"
-EXTENSIONS_FILE="$SRC/extensions"
+EXTENSIONS_FILE="./extensions"
 
 while read ext; do
 	[[ -n "$ext" ]] || continue
