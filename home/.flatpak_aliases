@@ -17,5 +17,5 @@ libreoffice org.libreoffice.LibreOffice
 onlyoffice  org.onlyoffice.desktopeditors
 
 # Games
-steam  com.valvesoftware.Steam
-heroic com.heroicgameslauncher.hgl
+steam               com.valvesoftware.Steam
+heroicgameslauncher com.heroicgameslauncher.hgl
