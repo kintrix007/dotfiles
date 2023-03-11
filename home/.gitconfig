@@ -13,3 +13,5 @@
 	defaultBranch = master
 [core]
 	autocrlf = input
+[alias]
+	unstage = restore --staged
