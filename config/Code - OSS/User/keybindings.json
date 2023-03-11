@@ -52,5 +52,27 @@
     {
         "key": "ctrl+f5",
         "command": "code-runner.run"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "editor.emmet.action.matchTag"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "editor.action.addSelectionToNextFindMatch"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "-editor.action.inPlaceReplace.down",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+,",
+        "command": "-editor.action.inPlaceReplace.up",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+,",
+        "command": "editor.action.addSelectionToPreviousFindMatch"
     }
 ]
