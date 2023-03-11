@@ -1,4 +1,4 @@
 sudo dnf upgrade -y
 
-sudo dnf install git gh
+sudo dnf install git gh vim
 
