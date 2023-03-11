@@ -5,6 +5,8 @@ Backups/
 blob_storage/
 Cache/
 CachedExtensions/
+CachedData
+CachedConfigurations
 CachedExtensionVSIXs/
 Code Cache/
 code.lock
