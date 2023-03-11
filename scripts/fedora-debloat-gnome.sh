@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "To be implemented..."
-exit 1
-
 echo
 echo "  Removing bloat packages..."
 echo
@@ -13,4 +10,4 @@ echo
 echo "  Removing fedora flathub filter..."
 echo
 
-flatpak remote-modify flathub --no-filter
+sudo flatpak remote-modify flathub --no-filter
