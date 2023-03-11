@@ -1,5 +1,13 @@
 sudo dnf upgrade -y
 
+# Enable free rmpfusion repo
+sudo dnf install \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+
+# Enable non-free rpmfusion repo
+sudo dnf install \
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
 (flatpak update --noninteractive && \
   flatpak install com.mattjakeman.ExtensionManager --noninteractive) &
 
