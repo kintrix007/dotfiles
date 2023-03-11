@@ -1,1 +1,14 @@
 #!/bin/bash
+
+# Figure out how to check if itch is installed
+if [ ! -f ~/.local/bin/itch-setup ]; then
+  pushd `mktemp -d`
+  OUTFILE="itch-setup-linux-amd64.zip"
+  wget "https://broth.itch.ovh/itch-setup/linux-amd64/1.26.0/archive/default" -O "$OUTFILE" -q
+  unzip "$OUTFILE" -d ~/.local/bin/
+  ~/.local/bin/itch-setup --silent
+  popd
+else
+  echo "Found traces of Itch installer. Executing..."
+  ~/.local/bin/itch-setup --silent
+fi
