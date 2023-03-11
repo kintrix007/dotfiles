@@ -11,7 +11,8 @@ sudo dnf install -y \
 (flatpak update --noninteractive && \
   flatpak install com.mattjakeman.ExtensionManager --noninteractive) &
 
-(sudo dnf install -y git gh vim htop neofetch ffmpeg && \
+# VLC for the drivers
+(sudo dnf install -y git gh vim htop neofetch ffmpeg zip unzip xz curl wget prename && \
   sudo dnf install -y gparted vlc mpv && \
   sudo dnf install -y papirus-icon-theme) &
 
