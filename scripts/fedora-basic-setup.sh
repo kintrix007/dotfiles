@@ -1,4 +1,5 @@
 sudo dnf upgrade -y
 
-sudo dnf install git gh vim
+flatpak update --noninteractive
 
+sudo dnf install git gh vim htop neofetch
