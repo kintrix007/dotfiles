@@ -1,12 +1,13 @@
 #!/bin/bash
 
-(sudo dnf install -y vlc-bittorrent \\
-  sudo dnf install -y nodejs) &
+sudo dnf install -y nodejs python3-pip
 
-# Install Itch.io desktop client
-pushd `mktemp -d`
-OUTFILE="itch-setup-linux-amd64.zip"
-wget "https://broth.itch.ovh/itch-setup/linux-amd64/1.26.0/archive/default" -O "$OUTFILE" -q
-unzip "$OUTFILE" -d ~/.local/bin/
-~/.local/bin/itch-setup --silent
-popd
+(sudo dnf install -y vlc-bittorrent && \
+  sudo dnf install -y ) &
+
+npm install -g npm
+
+../installers/ghcup.sh
+../installers/rustup.sh
+../installers/purescript.sh
+../installers/itch-desktop.sh
