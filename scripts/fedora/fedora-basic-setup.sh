@@ -16,6 +16,6 @@ sudo dnf install -y \
 # VLC for the drivers
 (sudo dnf install -y git gh vim htop neofetch ffmpeg zip unzip xz curl wget prename && \
   sudo dnf install -y gparted vlc mpv && \
-  sudo dnf install -y papirus-icon-theme) &
+  sudo dnf install -y papirus-icon-theme breeze-cursor-theme) &
 
 ../installers/nix.sh
