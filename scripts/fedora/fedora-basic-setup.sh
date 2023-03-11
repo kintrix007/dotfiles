@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo dnf upgrade -y
 
 # Enable free rmpfusion repo
@@ -16,11 +18,4 @@ sudo dnf install -y \
   sudo dnf install -y gparted vlc mpv && \
   sudo dnf install -y papirus-icon-theme) &
 
-if [! -d /nix ]; then
-    sh <(curl -L https://nixos.org/nix/install) --no-daemon
-    # ? Or alternatively, the following.
-    # ? It is for multi-user installation with no SELinux.
-    # sh <(curl -L https://nixos.org/nix/install) --daemon
-else
-    echo "Nothing to do. Nix already installed."
-fi
+../installers/nix.sh
