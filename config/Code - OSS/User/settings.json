@@ -1,6 +1,6 @@
 {
   "terminal.integrated.defaultProfile.linux": "bash",
-  "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'Consolas', 'monospace', monospace",
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Consolas', 'monospace', monospace",
   "editor.fontLigatures": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -75,7 +75,12 @@
       "editor.insertSpaces": true
   },
   "[haskell]": {
-    "editor.insertSpaces": true
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+  },
+  "[agda]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
   },
   
   "[html]": {
@@ -87,16 +92,74 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": true
   },
-
+  "[elm]": {
+    "editor.codeLens": false,
+  },
 
   "code-runner.executorMap": {
     "kotlin": "cd $dir && kotlinc $fileName -include-runtime -d main.jar && kotlin main.jar",
-    "vala": "cd $dir && valac $fileName -o app.out && ./app.out"
+    "vala": "tmp=`mktemp` && cd $dir && valac $fileName -o $tmp && $tmp"
   },
   "editor.snippetSuggestions": "none",
   "mesonbuild.buildFolder": "build",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Monokai",
   "cSpell.userWords": [
-    "utilz"
+    "Bakbak",
+    "Brainfuck",
+    "categorise",
+    "Checkstyle",
+    "colour",
+    "concat",
+    "Customisation",
+    "customise",
+    "Elems",
+    "fmap",
+    "foldl",
+    "foldr",
+    "funcs",
+    "Haxe",
+    "Invertibility",
+    "kintrix",
+    "mappend",
+    "mempty",
+    "nixpkgs",
+    "organise",
+    "organised",
+    "POSIX",
+    "Subgoal",
+    "Synchronisation",
+    "todos",
+    "toparse",
+    "unlines",
+    "unrecognised",
+    "utilz",
+    "Vala",
+    "vals",
+    "Wireframes"
   ],
+  "v.vls.enable": true,
+  "rust-analyzer.completion.callable.snippets": "add_parentheses",
+  "editor.parameterHints.cycle": true,
+  "editor.inlayHints.padding": true,
+  "editor.inlayHints.fontSize": 11,
+  "editor.inlayHints.fontFamily": "Fira Mono",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "haskell.formattingProvider": "stylish-haskell",
+  "haskell.plugin.ghcide-completions.config.snippetsOn": false,
+  "haskell.upgradeGHCup": false,
+  "npm.keybindingsChangedWarningShown": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "haskell.manageHLS": "GHCup",
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk-17.0.6.0.10-1.fc36.x86_64",
 }

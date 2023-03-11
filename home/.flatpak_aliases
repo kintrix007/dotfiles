@@ -10,12 +10,12 @@ discord     com.discordapp.Discord
 # Development
 blender     org.blender.Blender
 gitkraken   com.axosoft.GitKraken
-gnome-boxes org.gnome.Boxes
+#gnome-boxes org.gnome.Boxes
 
 # Office
 libreoffice org.libreoffice.LibreOffice
 onlyoffice  org.onlyoffice.desktopeditors
 
 # Games
-steam               com.valvesoftware.Steam
+#steam               com.valvesoftware.Steam
 heroicgameslauncher com.heroicgameslauncher.hgl
