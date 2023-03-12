@@ -18,7 +18,8 @@ sudo dnf install -y \
   sudo dnf install -y gparted vlc mpv
   sudo dnf install -y papirus-icon-theme breeze-cursor-theme gnome-tweaks
   sudo dnf install -y mozilla-fira-mono-fonts mozilla-fira-sans-fonts fira-code-fonts
-  sudo dnf install -y gnome-shell-extension-pop-shell) &
+  sudo dnf install -y gnome-shell-extension-pop-shell
+  sudo dnf remove -y gnome-extensions-app) &
 
 ../installers/nix.sh
 
