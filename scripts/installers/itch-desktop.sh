@@ -5,6 +5,7 @@ if [ ! -f ~/.local/bin/itch-setup ]; then
   pushd `mktemp -d`
   OUTFILE="itch-setup-linux-amd64.zip"
   wget "https://broth.itch.ovh/itch-setup/linux-amd64/1.26.0/archive/default" -O "$OUTFILE" -q
+  mkdir -p ~/.local/bin/
   unzip "$OUTFILE" -d ~/.local/bin/
   ~/.local/bin/itch-setup --silent
   popd
