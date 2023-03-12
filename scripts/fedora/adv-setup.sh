@@ -3,9 +3,9 @@
 sudo dnf install -y nodejs python3-pip
 
 (sudo dnf install -y vlc-bittorrent && \
-  sudo dnf install -y ) &
+  sudo dnf install -y steam) &
 
-npm install -g npm
+sudo npm install -g npm
 
 ../installers/ghcup.sh
 ../installers/rustup.sh
