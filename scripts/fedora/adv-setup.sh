@@ -9,5 +9,4 @@ sudo npm install -g npm
 
 ../installers/ghcup.sh
 ../installers/rustup.sh
-../installers/purescript.sh
 ../installers/itch-desktop.sh
