@@ -21,3 +21,7 @@ sudo dnf install -y \
   sudo dnf install -y gnome-shell-extension-pop-shell) &
 
 ../installers/nix.sh
+
+for job in `jobs -p`; do
+  wait $job
+done

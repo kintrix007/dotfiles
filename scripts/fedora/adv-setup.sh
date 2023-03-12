@@ -20,3 +20,7 @@ sudo npm install -g npm
 ../installers/v.sh
 ../installers/vs-codium-fedora.sh
 ../installers/itch-desktop.sh
+
+for job in `jobs -p`; do
+  wait $job
+done
