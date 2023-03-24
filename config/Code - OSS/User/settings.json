@@ -1,6 +1,7 @@
 {
   "terminal.integrated.defaultProfile.linux": "bash",
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Consolas', 'monospace', monospace",
+  // "editor.fontFamily": "'Fira Code', 'Liberation Serif'",
   "editor.fontLigatures": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -16,7 +17,13 @@
   "editor.suggestSelection": "first",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.bracketPairColorization.enabled": true,
-  
+  "editor.parameterHints.cycle": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.padding": true,
+  "editor.inlayHints.fontSize": 11,
+  "editor.inlayHints.fontFamily": "Fira Mono",
+  "editor.snippetSuggestions": "none",
+
   "redhat.telemetry.enabled": false,
 
   "diffEditor.codeLens": true,
@@ -26,17 +33,40 @@
   "gitlens.defaultTimeFormat": "HH:mm",
   "gitlens.statusBar.format": "${author}, ${agoOrDate}, via '${pullRequest}'",
   "gitlens.hovers.avatars": false,
-  
 
   "javascript.format.semicolons": "insert",
   "javascript.preferences.quoteStyle": "double",
   "typescript.format.semicolons": "insert",
   "typescript.preferences.quoteStyle": "double",
   "typescript.preferences.useAliasesForRenames": false,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "npm.keybindingsChangedWarningShown": true,
 
   "C_Cpp.default.cppStandard": "c++11",
   "C_Cpp.default.cStandard": "c11",
 
+  "haskell.formattingProvider": "stylish-haskell",
+  "haskell.plugin.ghcide-completions.config.snippetsOn": false,
+  "haskell.manageHLS": "GHCup",
+  "haskell.upgradeGHCup": false,
+
+  "v.vls.enable": true,
+
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+
+  "rust-analyzer.completion.callable.snippets": "add_parentheses",
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk-17.0.6.0.10-1.fc36.x86_64",
+  "mesonbuild.buildFolder": "build",
+
+  "workbench.colorTheme": "Monokai",
 
   "[markdown]": {
     "editor.wordWrap": "on",
@@ -63,7 +93,7 @@
       "strings": true
     },
   },
-  
+
   "[shellscript]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true
@@ -82,7 +112,6 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
   },
-  
   "[html]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
@@ -95,16 +124,19 @@
   "[elm]": {
     "editor.codeLens": false,
   },
+  "[python]": {
+    "editor.formatOnType": true
+  },
 
   "code-runner.executorMap": {
     "kotlin": "cd $dir && kotlinc $fileName -include-runtime -d main.jar && kotlin main.jar",
     "vala": "tmp=`mktemp` && cd $dir && valac $fileName -o $tmp && $tmp"
   },
-  "editor.snippetSuggestions": "none",
-  "mesonbuild.buildFolder": "build",
-  "workbench.colorTheme": "Monokai",
+
   "cSpell.userWords": [
+    "agda",
     "Bakbak",
+    "Bifunctor",
     "Brainfuck",
     "categorise",
     "Checkstyle",
@@ -117,16 +149,26 @@
     "foldl",
     "foldr",
     "funcs",
+    "ghcide",
     "Haxe",
+    "idxs",
     "Invertibility",
     "kintrix",
+    "kotlinc",
+    "nimpretty",
     "mappend",
     "mempty",
+    "mesonbuild",
+    "mktemp",
+    "Monoid",
+    "Monokai",
     "nixpkgs",
     "organise",
     "organised",
     "POSIX",
+    "Semigroup",
     "Subgoal",
+    "succ",
     "Synchronisation",
     "todos",
     "toparse",
@@ -134,32 +176,9 @@
     "unrecognised",
     "utilz",
     "Vala",
+    "valac",
     "vals",
+    "websockets",
     "Wireframes"
   ],
-  "v.vls.enable": true,
-  "rust-analyzer.completion.callable.snippets": "add_parentheses",
-  "editor.parameterHints.cycle": true,
-  "editor.inlayHints.padding": true,
-  "editor.inlayHints.fontSize": 11,
-  "editor.inlayHints.fontFamily": "Fira Mono",
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.variableTypes": true,
-  "rust-analyzer.inlayHints.typeHints.enable": false,
-  "haskell.formattingProvider": "stylish-haskell",
-  "haskell.plugin.ghcide-completions.config.snippetsOn": false,
-  "haskell.upgradeGHCup": false,
-  "npm.keybindingsChangedWarningShown": true,
-  "editor.inlayHints.enabled": "offUnlessPressed",
-  "[python]": {
-    "editor.formatOnType": true
-  },
-  "haskell.manageHLS": "GHCup",
-  "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk-17.0.6.0.10-1.fc36.x86_64",
 }
