@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -d ~/bin/nerd-fonts ]; then
+  echo "Error: Nerd Fonts repo does not exist."
+  exit 1
+fi
+
 # Check if there is at most one argument.
 if ! [ -z $2 ]; then
   echo "Only one argument expected"
@@ -10,9 +15,7 @@ if [ -z $1 ]; then
   echo "Expected one argument."
 fi
 
-pushd >/dev/null ~/.local/share/fonts/nerd-fonts
-
+pushd >/dev/null ~/bin/nerd-fonts
 git sparse-checkout add "patched-fonts/$1"
-./install "$1"
-
+./install.sh "$1"
 popd >/dev/null
