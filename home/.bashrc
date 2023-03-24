@@ -30,3 +30,6 @@ which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 
 # Rustup
 . "$HOME/.cargo/env"
+
+#[ -f "/home/kintrix/.ghcup/env" ] && source "/home/kintrix/.ghcup/env" # ghcup-env
+[ -f "/home/kintrix/.ghcup/env" ] && source "/home/kintrix/.ghcup/env" # ghcup-env
