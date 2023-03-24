@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if which v >/dev/null 2>&1; then
+if ! which v >/dev/null 2>&1; then
   mkdir -p ~/.local/bin/
   pushd ~/.local/bin/ >/dev/null
   git clone https://github.com/vlang/v vlang
