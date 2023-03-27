@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if ! which v >/dev/null 2>&1; then
-  mkdir -p ~/.local/bin/
-  pushd ~/.local/bin/ >/dev/null
+  mkdir -p ~/bin/
+  pushd ~/bin/ >/dev/null
   git clone https://github.com/vlang/v vlang
   cd vlang
   make
