@@ -9,15 +9,14 @@ end)
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
-lsp.ensure_installed({
+local servers = {
     'tsserver',
     'hls',
-})
+    'pyright',
+}
 
-lsp.setup_servers({
-    'tsserver',
-    'hls',
-})
+lsp.ensure_installed(servers)
+lsp.setup_servers(servers)
 
 lsp.set_sign_icons({
     error = '!!',
