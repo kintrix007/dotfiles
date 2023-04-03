@@ -7,7 +7,7 @@ vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 -- vim.keymap.set('n', '<leader>fs', builtin.grep_string, {})
 -- Or:
 vim.keymap.set('n', '<leader>fs', function()
-    -- `pcall` is try/catch
+    -- Handle if user does ^C
     local succ, search = pcall(vim.fn.input, "Grep > ")
     if not succ then return end
 
