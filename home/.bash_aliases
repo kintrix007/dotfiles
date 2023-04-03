@@ -10,6 +10,18 @@ alias xi='sudo xbps-install'	# Use '\xi' for 'xi' from 'xtools'
 alias xq='xbps-query'		# Use '\xq' for 'xq' from 'xtools'
 alias xr='sudo xbps-remove'
 
+# For neovim
+alias vim='nvim'
+
 # Funi
-alias :q='which cowsay >/dev/null 2>&1 && cowsay "idiot" 2>/dev/null || echo "idiot"'
-alias :wq='which cowsay >/dev/null 2>&1 && cowsay "idiot" 2>/dev/null || echo "idiot"'
+idot() {
+    if which cowsay >/dev/null 2>&1; then
+        cowsay "n00b" 2>/dev/null
+    else
+        echo "n00b"
+    fi
+    false
+}
+
+alias :q='idot'
+alias :wq='idot'
