@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
     }
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter-context', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
 
     use 'mbbill/undotree'
@@ -52,4 +53,6 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},     -- Required
         }
     }
+
+    use('github/copilot.vim')
 end)
