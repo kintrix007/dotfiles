@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
 
     use 'lukas-reineke/indent-blankline.nvim'
 
+    use 'tpope/vim-surround'
+
     use {
         'numToStr/Comment.nvim',
         config = function()
