@@ -10,13 +10,16 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 local servers = {
+    -- 'clangd', -- Not supported on aarch64
+    -- 'vls', -- Not supported on aarch64
+    'rust_analyzer',
     'tsserver',
     'hls',
     'pyright',
 }
 
 lsp.ensure_installed(servers)
-lsp.setup_servers(servers)
+-- lsp.setup_servers(servers)
 
 lsp.set_sign_icons({
     error = '!!',
