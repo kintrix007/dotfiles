@@ -19,17 +19,28 @@ if [[ -f ~/.flatpak_aliases ]]; then
 	done < <(sed 's/#.*//' ~/.flatpak_aliases)
 fi
 
-# Set defaul editor
+# Set default editor
 export EDITOR=vim
 
+# Helper function to display git branch in shell prompt
+__ps1_get_git_branch() {
+    if git branch >/dev/null 2>&1; then
+        local branch=`git branch 2>/dev/null | grep '^*' | cut -d' ' -f2`
+        echo "($branch)"
+    fi
+}
+
 # Set console prompt
-PS1='\[\e[1m\][\[\e[92m\]\u\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0;1m\]]$ \[\e[0m\]'
+PS1='\[\e[1m\][\[\e[92m\]\u\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]] '
+PS1+='$([[ $? == 0 ]] && echo "\[\e[1;92m\]✔\[\e[0m\]" || echo "\[\e[1;91m\]✘\[\e[0m\]") '
+PS1+='\[\e[0;3;93m\]$(__ps1_get_git_branch)\[\e[0m\] '
+PS1+=$'\n\[\e[0;1m\]$\[\e[0m\] '
 
 # Hook direnv into the shell
 which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 
 # Rustup
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-#[ -f "/home/kintrix/.ghcup/env" ] && source "/home/kintrix/.ghcup/env" # ghcup-env
-[ -f "/home/kintrix/.ghcup/env" ] && source "/home/kintrix/.ghcup/env" # ghcup-env
+# ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
