@@ -10,6 +10,12 @@ alias xi='sudo xbps-install'	# Use '\xi' for 'xi' from 'xtools'
 alias xq='xbps-query'		# Use '\xq' for 'xq' from 'xtools'
 alias xr='sudo xbps-remove'
 
+# Git aliases
+alias ga='git add'
+alias gcm='git commit -m'
+alias gp='git push'
+alias gss='git status'
+
 # For neovim
 alias vim='nvim'
 
