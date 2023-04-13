@@ -44,3 +44,5 @@ which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 
 # ghcup-env
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+
+. "$HOME/.cargo/env"
