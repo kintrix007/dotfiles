@@ -1,4 +1,4 @@
--- Sets fat cursor
+-- Sets fat cursor in insert mode too
 -- vim.opt.guicursor = ""
 
 vim.cmd('colorscheme kanagawa')
