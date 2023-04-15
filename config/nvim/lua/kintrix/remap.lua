@@ -13,5 +13,11 @@ vim.keymap.set("n", "<leader>x", function()
     vim.cmd("!chmod +x %")
 end, { silent = true })
 
+-- Tab navigation
+-- Note to self: g<Tab> cycles between the last used tabs
+vim.keymap.set("n", "<leader>t", vim.cmd.tabnew, { desc = "New [T]ab" })
+vim.keymap.set("n", "<C-j>", vim.cmd.tabprevious)
+vim.keymap.set("n", "<C-k>", vim.cmd.tabnext)
+
 -- There has to be a better way than this, right?
 vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })
