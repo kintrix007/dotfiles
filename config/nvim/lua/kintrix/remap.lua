@@ -1,3 +1,6 @@
+-- Leader key
+vim.g.mapleader = " "
+
 -- Project navigation
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]roject [V]iew" })
 
