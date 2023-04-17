@@ -8,6 +8,11 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]roject [V]iew" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show [E]rror" })
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "[F]ormat buffer" })
 
+-- Terminal mode
+vim.keymap.set("n", "<leader>tf", ":terminal<CR>", { desc = "[T]erminal [F]ullscreen" })
+vim.keymap.set("n", "<leader>tt", ":sp<CR><C-w>j:res 12<CR>:terminal<CR>", { desc = "[T]erminal Spli[t]" })
+vim.keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 -- Why the hell is this not silent?
 vim.keymap.set("n", "<leader>x", function()
     vim.cmd("!chmod +x %")
