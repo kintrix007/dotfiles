@@ -11,11 +11,12 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 local servers = {
     -- 'clangd', -- Not supported on aarch64
-    -- 'vls', -- Not supported on aarch64
-    'rust_analyzer',
+    'bashls',
     'tsserver',
-    'hls',
     'pyright',
+    'rust_analyzer',
+    -- 'hls', -- Takes forever to compile
+    -- 'vls', -- Not supported on aarch64
 }
 
 lsp.ensure_installed(servers)
