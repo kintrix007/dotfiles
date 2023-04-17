@@ -20,7 +20,8 @@ end, { silent = true })
 
 -- Tab navigation
 -- Note to self: g<Tab> cycles between the last used tabs
-vim.keymap.set("n", "<leader>t", vim.cmd.tabnew, { desc = "New [T]ab" })
+vim.keymap.set("n", "<leader>T", vim.cmd.tabnew, { desc = "New [T]ab" }) -- May remove this
+vim.keymap.set("n", "<leader><C-t>", vim.cmd.tabnew, { desc = "New [T]ab" })
 vim.keymap.set("n", "<C-j>", vim.cmd.tabprevious)
 vim.keymap.set("n", "<C-k>", vim.cmd.tabnext)
 
