@@ -5,6 +5,9 @@ sudo dnf install -y nodejs python3-pip
 (sudo dnf remove -y firefox
   sudo dnf install -y vlc-bittorrent transmission-gtk
   sudo dnf install -y g++
+  sudo dnf install -y nautilus-gsconnect
+  sudo dnf install -y gnome-shell-extension-pop-shell
+  sudo dnf remove -y gnome-extensions-app
   sudo dnf install -y steam) &
 
 flatpak install --noninteractive flathub org.mozilla.firefox &
