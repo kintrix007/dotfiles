@@ -14,7 +14,7 @@ sudo dnf install -y \
   flatpak install com.mattjakeman.ExtensionManager --noninteractive) &
 
 # VLC for the drivers
-(sudo dnf install -y git gh vim htop neofetch ffmpeg zip unzip xz curl wget prename
+(sudo dnf install -y git gh vim neovim htop neofetch ffmpeg zip unzip xz curl wget prename
   sudo dnf install -y gparted vlc mpv
   sudo dnf install -y papirus-icon-theme breeze-cursor-theme gnome-tweaks
   sudo dnf install -y mozilla-fira-mono-fonts mozilla-fira-sans-fonts fira-code-fonts
