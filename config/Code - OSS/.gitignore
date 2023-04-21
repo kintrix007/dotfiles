@@ -5,6 +5,7 @@ Backups/
 blob_storage/
 Cache/
 CachedExtensions/
+CachedProfilesData/
 CachedData
 CachedConfigurations
 CachedExtensionVSIXs/
@@ -33,3 +34,4 @@ WebStorage/
 User/globalStorage/
 User/History/
 User/workspaceStorage/
+User/sync/
