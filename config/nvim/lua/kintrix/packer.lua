@@ -11,8 +11,8 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- THEMES
-    use('sainnhe/everforest', {as = 'everforest'})
-    use('sainnhe/sonokai', {as = 'sonokai'})
+    use('sainnhe/everforest', { as = 'everforest' })
+    use('sainnhe/sonokai', { as = 'sonokai' })
     use 'olimorris/onedarkpro.nvim'
     use 'rebelot/kanagawa.nvim' -- Best tbh
     -- THEMES END
@@ -20,11 +20,11 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                          , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('nvim-treesitter/nvim-treesitter-context', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use('nvim-treesitter/nvim-treesitter-context', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
 
     use 'mbbill/undotree'
@@ -60,19 +60,20 @@ return require('packer').startup(function(use)
         branch = 'v2.x',
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
+            { 'neovim/nvim-lspconfig' }, -- Required
+            {
+               -- Optional
                 'williamboman/mason.nvim',
                 run = function()
                     pcall(vim.cmd, 'MasonUpdate')
                 end,
             },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
+            { 'hrsh7th/nvim-cmp' },   -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' },   -- Required
         }
     }
 
