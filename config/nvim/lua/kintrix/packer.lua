@@ -37,6 +37,12 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
 
     use 'tpope/vim-surround'
+    use {
+        'windwp/nvim-autopairs',
+        config = function()
+            require('nvim-autopairs').setup {}
+        end
+    }
 
     use {
         'numToStr/Comment.nvim',
@@ -70,5 +76,6 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Give it a try why not.
     use('github/copilot.vim')
 end)
