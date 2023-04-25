@@ -35,7 +35,8 @@ cmp.setup({
     mapping = {
         ['<C-Space>'] = cmp.mapping.complete(),
         -- Yes, I know. I am new to Vim, I need my tab to autocomplete.
-        ['<Tab>'] = cmp.mapping.confirm({select = true}),
+        -- Let's try going back to the default <C-y>...
+        -- ['<Tab>'] = cmp.mapping.confirm({select = true}),
     }
 })
 

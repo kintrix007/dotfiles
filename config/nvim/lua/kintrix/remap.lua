@@ -30,4 +30,4 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "[Y]ank to system clip
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank line to system clipbloard" })
 
 -- There has to be a better way than this, right?
-vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })
