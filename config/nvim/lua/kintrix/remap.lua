@@ -25,5 +25,9 @@ vim.keymap.set("n", "<leader><C-t>", vim.cmd.tabnew, { desc = "New [T]ab" })
 vim.keymap.set("n", "<C-j>", vim.cmd.tabprevious)
 vim.keymap.set("n", "<C-k>", vim.cmd.tabnext)
 
+-- System clipbloard
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "[Y]ank to system clipbloard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank line to system clipbloard" })
+
 -- There has to be a better way than this, right?
 vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })
