@@ -24,3 +24,8 @@
     to be installed automatically, so just install is by running
     `:MasonInstall haskell-language-server`.
 
+6.  Make sure that the following executables are located on the `PATH`
+    for communicating with the system clipboard:
+    - `wl-copy` and `wl-paste` for Wayland
+    - `xclip` or `xsel` for X11
+
