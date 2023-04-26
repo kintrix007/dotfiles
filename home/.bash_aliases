@@ -13,10 +13,10 @@ alias xr='sudo xbps-remove'
 # Git aliases
 alias ga='git add'
 alias gcm='git commit -m'
-alias gp='git push'
 # Technically collides with GhostScript's `gs`...
 # But quite frankly, who cares.
 alias gs='git status'
+alias gd='git diff'
 
 # For neovim
 alias vim='nvim'
