@@ -22,6 +22,9 @@ fi
 # Set default editor
 export EDITOR=vim
 
+# Use the same PS1 variable for nix shells as well
+export NIX_SHELL_PRESERVE_PROMPT=1
+
 # Helper function to display git branch in shell prompt
 __ps1_get_git_branch() {
     if git branch >/dev/null 2>&1; then
@@ -30,10 +33,19 @@ __ps1_get_git_branch() {
     fi
 }
 
+# Display nix-shell instead of the username when inside a nix shell
+__get_user_or_nix() {
+    if [[ "$SHELL" =~ /nix* ]]; then
+        printf "\e[93mnix-shell"
+    else
+        printf "\e[92m$USER"
+    fi
+}
+
 # Set console prompt
-PS1='\[\e[1m\][\[\e[92m\]\u\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]] '
+PS1='\[\e[1m\][$(__get_user_or_nix)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]] '
 PS1+='$([[ $? == 0 ]] && echo "\[\e[1;92m\]✔\[\e[0m\]" || echo "\[\e[1;91m\]✘\[\e[0m\]") '
-PS1+='\[\e[0;3;93m\]$(__ps1_get_git_branch)\[\e[0m\] '
+PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\] '
 PS1+=$'\n\[\e[0;1m\]$\[\e[0m\] '
 
 # Hook direnv into the shell
