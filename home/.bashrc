@@ -33,8 +33,17 @@ __ps1_get_git_branch() {
     fi
 }
 
+# Helper function to display success of last command
+__ps1_get_cmd_success() {
+    if [[ "$CMD_SUCCESS" == 0 ]]; then
+        printf "\e[1;92m✔\e[0m"
+    else
+        printf "\e[1;91m✘\e[0m"
+    fi
+}
+
 # Display nix-shell instead of the username when inside a nix shell
-__get_user_or_nix() {
+__ps1_get_user_or_nix() {
     if [[ "$SHELL" =~ /nix* ]]; then
         printf "\e[93mnix-shell"
     else
@@ -43,8 +52,9 @@ __get_user_or_nix() {
 }
 
 # Set console prompt
-PS1='\[\e[1m\][$(__get_user_or_nix)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]] '
-PS1+='$([[ $? == 0 ]] && echo "\[\e[1;92m\]✔\[\e[0m\]" || echo "\[\e[1;91m\]✘\[\e[0m\]") '
+PROMPT_COMMAND='CMD_SUCCESS=$?'
+PS1='\[\e[1m\][$(__ps1_get_user_or_nix)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]] '
+PS1+='$(__ps1_get_cmd_success) '
 PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\] '
 PS1+=$'\n\[\e[0;1m\]$\[\e[0m\] '
 
