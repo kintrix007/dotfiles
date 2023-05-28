@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "[F]ormat buffer" 
 -- Terminal mode
 vim.keymap.set("n", "<leader>tf", ":terminal<CR>", { desc = "[T]erminal [F]ullscreen" })
 vim.keymap.set("n", "<leader>tt", ":sp<CR><C-w>j:res 12<CR>:terminal<CR>", { desc = "[T]erminal Spli[t]" })
-vim.keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("t", [[<C-\><C-\>]], [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- Why the hell is this not silent?
 vim.keymap.set("n", "<leader>x", function()
@@ -28,6 +28,10 @@ vim.keymap.set("n", "<C-k>", vim.cmd.tabnext)
 -- System clipbloard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "[Y]ank to system clipbloard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank line to system clipbloard" })
+
+-- Find and replace visual selection
+vim.keymap.set("n", "<leader>r", [[:%s/\v//g<Left><Left><Left>]], { desc = "[R]eplace" })
+vim.keymap.set("v", "<leader>r", [[:s/\%V\v//g<Left><Left><Left>]], { desc = "[R]eplace in [V]isual Selection" })
 
 -- There has to be a better way than this, right?
 -- vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })
