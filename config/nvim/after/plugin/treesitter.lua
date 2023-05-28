@@ -4,6 +4,7 @@ require'nvim-treesitter.configs'.setup {
       "javascript", "typescript", "python",
       "rust", "c", "lua", "vim",
       "agda", "haskell",
+      "json", "yaml",
       "java", -- ew... But kinda need it for school
   },
 
