@@ -1,0 +1,2 @@
+# Probably better to install with opam, but I guess I'll put it here either way
+nix-shell -p ocaml opam dune_3 dune-release ocamlPackages.merlin ocamlPackages.ocaml-lsp ocamlPackages.odoc ocamlformat ocamlPackages.utop
