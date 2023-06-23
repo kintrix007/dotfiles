@@ -15,7 +15,6 @@ local servers = {
     'tsserver',
     'pyright',
     'rust_analyzer',
-    'clangd'
     -- 'hls', -- Takes forever to compile
     -- 'vls', -- Not supported on aarch64
 }
