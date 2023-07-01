@@ -1,4 +1,5 @@
 # This is mainly redundancy, but don't wanna commit those.
+DawnCache/
 History/
 globalStorage/
 workspaceStorage/
