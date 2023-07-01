@@ -1,7 +1,7 @@
 local lsp = require('lsp-zero').preset('recommended')
 
 lsp.on_attach(function(client, bufnr)
-    lsp.default_keymaps({buffer = bufnr})
+    lsp.default_keymaps({ buffer = bufnr })
 end)
 
 -- lsp.ensure_installed({'tsserver'})
@@ -43,7 +43,7 @@ cmp.setup({
 
 lsp.on_attach(function(client, bufnr)
     local _ = client
-    local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
 
     -- If lsp-zero is not available, try doing those actions with vim lsp.
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
