@@ -3,6 +3,11 @@ local telescope = require('telescope.builtin')
 -- Leader key
 vim.g.mapleader = " "
 
+-- Get out of my life
+-- I don't want most of what I have typed to disappear when
+-- I accidentally hit <C-u> instead of <C-Y>
+vim.keymap.set("i", "<C-u>", "<Nop>", { desc = "Remove Ctrl+U" });
+
 -- Project navigation
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]roject [V]iew" })
 vim.keymap.set("n", "<leader>fw", vim.cmd.Ex, { desc = "[F]older Vie[w]" })
