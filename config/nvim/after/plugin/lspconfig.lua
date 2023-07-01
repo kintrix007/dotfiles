@@ -1,6 +1,6 @@
 local lspconfig = require("lspconfig")
 
-lspconfig['hls'].setup {
+lspconfig.hls.setup {
     settings = {
         haskell = {
             cabalFormattingProvider = "cabalfmt",
@@ -8,3 +8,6 @@ lspconfig['hls'].setup {
         }
     }
 }
+
+-- lspconfig.csharp_ls.setup {}
+
