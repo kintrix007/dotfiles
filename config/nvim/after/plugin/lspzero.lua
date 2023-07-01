@@ -10,12 +10,13 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 local servers = {
-    -- 'clangd', -- Not supported on aarch64
+    'nil_ls', -- Nix language server
     'bashls',
     'tsserver',
     'pyright',
     'rust_analyzer',
     -- 'hls', -- Takes forever to compile
+    -- 'clangd', -- Not supported on aarch64
     -- 'vls', -- Not supported on aarch64
 }
 
