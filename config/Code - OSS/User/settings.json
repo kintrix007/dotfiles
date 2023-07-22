@@ -60,6 +60,7 @@
   "vim.handleKeys": {
     // "<C-a>": false, // I want my increment to work...
     "<C-f>": false,
+    "<C-S-f>": false,
   },
 
   "vim.insertModeKeyBindings": [
@@ -119,6 +120,20 @@
     "kotlin": "cd $dir && kotlinc $fileName -include-runtime -d main.jar && kotlin main.jar",
     "vala": "tmp=`mktemp` && cd $dir && valac $fileName -o $tmp && $tmp"
   },
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    }
+  ],
 
   "[markdown]": {
     "editor.insertSpaces": true,
@@ -263,6 +278,7 @@
     "mktemp",
     "Monoid",
     "Monokai",
+    "Neovim",
     "nimpretty",
     "nixpkgs",
     "organise",
@@ -270,6 +286,7 @@
     "POSIX",
     "Semigroup",
     "signum",
+    "Stantec",
     "Subgoal",
     "succ",
     "Synchronisation",
