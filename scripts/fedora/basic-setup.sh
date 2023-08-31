@@ -1,5 +1,7 @@
 #!/bin/bash
 
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click tru
+
 sudo dnf upgrade -y
 
 # Enable free rmpfusion repo
