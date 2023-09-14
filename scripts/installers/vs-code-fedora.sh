@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Add GPG key
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
