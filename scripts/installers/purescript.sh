@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ? https://jordanmartinez.github.io/purescript-jordans-reference-site/content/01-Getting-Started/04-Install-Guide.html
 # ? Recommended versions at the time of writing: 

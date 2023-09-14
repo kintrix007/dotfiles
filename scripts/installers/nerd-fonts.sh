@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! -d ~/bin/nerd-fonts ]; then
   mkdir -p ~/bin/

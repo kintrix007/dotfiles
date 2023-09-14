@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! -d /nix ]; then
     sh <(curl -L https://nixos.org/nix/install) --no-daemon

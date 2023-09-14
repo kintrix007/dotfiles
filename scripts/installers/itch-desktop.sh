@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Figure out how to check if itch is installed
 if [ ! -f ~/.local/bin/itch-setup ]; then
