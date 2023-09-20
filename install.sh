@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 FILEPATH=`readlink -f ${BASH_SOURCE:-$0}`
 SRC=`dirname $FILEPATH`
