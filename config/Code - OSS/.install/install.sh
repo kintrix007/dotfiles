@@ -17,6 +17,7 @@ if ! which "$CODE" >/dev/null 2>&1; then
 fi
 
 echo "'$CODE' found."
+echo
 
 while read ext; do
 	[[ -n "$ext" ]] || continue
