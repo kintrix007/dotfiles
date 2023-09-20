@@ -1,6 +1,7 @@
 #!/bin/bash
 
-gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click tru
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
 sudo dnf upgrade -y
 
