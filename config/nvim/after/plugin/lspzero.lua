@@ -10,7 +10,6 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 local servers = {
-    'nil_ls', -- Nix language server
     'bashls',
     'tsserver',
     'pyright',
