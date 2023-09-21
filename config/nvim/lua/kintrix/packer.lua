@@ -78,5 +78,5 @@ return require('packer').startup(function(use)
     }
 
     -- Give it a try why not.
-    use('github/copilot.vim')
+    use('zbirenbaum/copilot.lua')
 end)
