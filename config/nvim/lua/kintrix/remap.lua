@@ -3,13 +3,17 @@ local telescope = require('telescope.builtin')
 -- Leader key
 vim.g.mapleader = " "
 
+-- Cursor navigation
+-- Navigate editor lines more easily (when linewrap is on)
+vim.keymap.set("n", "<A-j>", "gj", {desc = "Go down an editor line"})
+vim.keymap.set("n", "<A-k>", "gk", {desc = "Go up an editor line"})
+
 -- Get out of my life
 -- I don't want most of what I have typed to disappear when
 -- I accidentally hit <C-u> instead of <C-Y>
-vim.keymap.set("i", "<C-u>", "<Nop>", { desc = "Remove Ctrl+U" });
+vim.keymap.set("i", "<C-u>", "<Nop>", { desc = "Remove Ctrl+U" })
 
 -- Project navigation
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]roject [V]iew" })
 vim.keymap.set("n", "<leader>fw", vim.cmd.Ex, { desc = "[F]older Vie[w]" })
 
 -- I guess it's LSP?
@@ -41,8 +45,11 @@ vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "[P]aste from system
 vim.keymap.set({ "n", "v" }, "<leader>P", [["+P]], { desc = "[P]aste from system clipboard" })
 
 -- Find and replace visual selection
+-- User "very magic" mode by default for searching and 'Find & Replace'
 vim.keymap.set("n", "<leader>r", [[:%s/\v//g<Left><Left><Left>]], { desc = "[R]eplace" })
 vim.keymap.set("v", "<leader>r", [[:s/\%V\v//g<Left><Left><Left>]], { desc = "[R]eplace in [V]isual Selection" })
+vim.keymap.set("n", "/", "/\\v")
+vim.keymap.set("v", "/", "/\\v")
 
 -- There has to be a better way than this, right?
 -- vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })
