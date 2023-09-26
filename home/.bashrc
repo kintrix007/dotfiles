@@ -20,7 +20,7 @@ if [[ -f ~/.flatpak_aliases ]]; then
 fi
 
 # Set default editor
-export EDITOR=nvim
+export EDITOR=vim
 
 # Use the same PS1 variable for nix shells as well
 export NIX_SHELL_PRESERVE_PROMPT=1
