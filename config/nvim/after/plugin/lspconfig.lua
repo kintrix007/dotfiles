@@ -11,5 +11,23 @@ lspconfig.hls.setup {
     }
 }
 
+lspconfig.clangd.setup {
+    cmd = { "clangd" },
+    single_file_support = true,
+}
+
+lspconfig.nil_ls.setup {
+    cmd = { "nil" },
+}
+
+lspconfig.metals.setup {
+    cmd = { "metals" },
+    capabilities = {
+        workspace = {
+            configuration = false,
+        },
+    },
+}
+
 -- lspconfig.csharp_ls.setup {}
 
