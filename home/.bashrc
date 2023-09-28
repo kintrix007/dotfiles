@@ -53,10 +53,10 @@ __ps1_get_user_or_nix() {
 
 # Set console prompt
 PROMPT_COMMAND='CMD_SUCCESS=$?'
-PS1='\[\e[1m\][$(__ps1_get_user_or_nix)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]] '
+PS1='╭──\[\e[1m\]($(__ps1_get_user_or_nix)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]) '
 PS1+='$(__ps1_get_cmd_success) '
 PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\] '
-PS1+=$'\n\[\e[0;1m\]$\[\e[0m\] '
+PS1+=$'\n╰─\[\e[0;1m\]$\[\e[0m\] '
 
 # Hook direnv into the shell
 which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
@@ -66,3 +66,5 @@ which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 
 # ghcup-env
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+
+true
