@@ -44,10 +44,14 @@ __ps1_get_cmd_success() {
 
 # Display nix-shell instead of the username when inside a nix shell
 __ps1_get_user_or_nix() {
-    if [[ "$SHELL" =~ /nix* ]]; then
-        printf "\e[93mnix-shell"
-    else
+    if [[ -z $IN_NIX_SHELL ]]; then
         printf "\e[92m$USER"
+    else
+        if [[ "$SHELL" =~ /nix* ]]; then
+            printf "\e[93mnix-shell"
+        else
+            printf "\e[95mdirenv-sh"
+        fi
     fi
 }
 
