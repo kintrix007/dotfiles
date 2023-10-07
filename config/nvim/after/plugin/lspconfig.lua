@@ -2,7 +2,10 @@ local lspconfig = require("lspconfig")
 
 lspconfig.nil_ls.setup {
     cmd = { "nil" },
-    single_file_support = true,
+}
+
+lspconfig.rnix.setup {
+    cmd = { "rnix-lsp" },
 }
 
 lspconfig.bashls.setup {
