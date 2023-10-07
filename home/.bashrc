@@ -50,7 +50,11 @@ __ps1_get_user_or_nix() {
         if [[ "$SHELL" =~ /nix* ]]; then
             printf "\e[93mnix-shell"
         else
-            printf "\e[95mdirenv-sh"
+            if [[ -z $buildInputs ]]; then
+                printf "\e[93mnix-dev"
+            else
+                printf "\e[95mdirenv-sh"
+            fi
         fi
     fi
 }
