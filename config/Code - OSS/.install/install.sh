@@ -20,9 +20,9 @@ echo "'$CODE' found."
 echo
 
 while read ext; do
-	[[ -n "$ext" ]] || continue
+	[[ -z "$ext" ]] && continue
 	echo "Installing '$ext'..."
-	$CODE --install-extension "$ext" > /dev/null 2>&1
+	$CODE --install-extension "$ext" >/dev/null 2>&1
 	exit_code=$?
 	[[ $exit_code != 0 ]] && 1>&2 echo "Something went wrong installing '$ext' ($exit_code)"
 done < <(sed 's/#.*//' "$EXTENSIONS_FILE"; echo)
