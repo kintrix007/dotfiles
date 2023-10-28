@@ -3,6 +3,9 @@ local telescope = require('telescope.builtin')
 -- Leader key
 vim.g.mapleader = " "
 
+-- Run current file
+vim.keymap.set("n", "<f5>", ":!./%<CR>", { desc = "Run Current File" })
+
 -- Cursor navigation
 -- Navigate editor lines more easily (when linewrap is on)
 vim.keymap.set("n", "<A-j>", "gj", {desc = "Go down an editor line"})
