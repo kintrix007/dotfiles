@@ -51,8 +51,12 @@ lspconfig.metals.setup {
     single_file_support = true,
 }
 
-lspconfig.vuels.setup {
-    cmd = { "vls" },
+lspconfig.volar.setup {
+    cmd = { "vue-language-server", "--stdio" },
+    -- Takeover mode:
+    filetypes = { "vue", "typescript", "javascript", "json" },
+    -- Normal mode
+    -- filetypes = {"vue"},
 }
 
 -- lspconfig.csharp_ls.setup {}
