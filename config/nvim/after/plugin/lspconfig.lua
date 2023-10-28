@@ -15,7 +15,7 @@ lspconfig.bashls.setup {
 }
 
 lspconfig.hls.setup {
-    cmd = {"haskell-language-server-wrapper", "--lsp"},
+    cmd = { "haskell-language-server-wrapper", "--lsp" },
     filetypes = { "haskell", "lhaskell" },
     settings = {
         haskell = {
@@ -51,5 +51,8 @@ lspconfig.metals.setup {
     single_file_support = true,
 }
 
--- lspconfig.csharp_ls.setup {}
+lspconfig.vuels.setup {
+    cmd = { "vls" },
+}
 
+-- lspconfig.csharp_ls.setup {}
