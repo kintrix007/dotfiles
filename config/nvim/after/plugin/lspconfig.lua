@@ -26,10 +26,10 @@ lspconfig.hls.setup {
     single_file_support = true,
 }
 
-lspconfig.clangd.setup {
-    cmd = { "clangd" },
-    single_file_support = true,
-}
+-- lspconfig.clangd.setup {
+--     cmd = { "clangd" },
+--     single_file_support = true,
+-- }
 
 lspconfig.ccls.setup {
     cmd = { "ccls" },
@@ -54,7 +54,11 @@ lspconfig.metals.setup {
 lspconfig.volar.setup {
     cmd = { "vue-language-server", "--stdio" },
     -- Takeover mode:
-    filetypes = { "vue", "typescript", "javascript", "json" },
+    filetypes = {
+        "typescript", "typescriptreact",
+        "javascript", "javascriptreact",
+        "vue", "json"
+    },
     -- Normal mode
     -- filetypes = {"vue"},
 }
