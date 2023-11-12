@@ -144,6 +144,7 @@
       "strings": "off",
       "other": "off"
     },
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
   },
 
   "[yaml]": {
