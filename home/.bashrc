@@ -28,7 +28,8 @@ export NIX_SHELL_PRESERVE_PROMPT=1
 # Helper function to display git branch in shell prompt
 __ps1_get_git_branch() {
     if git branch >/dev/null 2>&1; then
-        local branch=`git branch 2>/dev/null | grep '^*' | cut -d' ' -f2`
+        local line=`git branch 2>/dev/null | grep '^\*'`
+        local branch=${line##\* }
         echo "($branch)"
     fi
 }
