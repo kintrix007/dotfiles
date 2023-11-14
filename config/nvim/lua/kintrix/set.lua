@@ -2,6 +2,7 @@
 -- vim.opt.guicursor = ""
 
 vim.cmd('colorscheme kanagawa')
+vim.opt.spell = true;
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
