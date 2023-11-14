@@ -83,7 +83,7 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [ "<leader>", "f" ],
+      "before": [ "<leader>", "f", "f" ],
       "commands": [ "editor.action.formatDocument" ],
     },
     {
