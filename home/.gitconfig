@@ -1,14 +1,5 @@
-[user]
-	name = kintrix007
-	email = boldizsar02@gmail.com
 [pull]
 	rebase = true
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
 [init]
 	defaultBranch = master
 [core]
