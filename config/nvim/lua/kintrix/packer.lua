@@ -39,9 +39,6 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use {
         'windwp/nvim-autopairs',
-        config = function()
-            require('nvim-autopairs').setup {}
-        end
     }
 
     use {
