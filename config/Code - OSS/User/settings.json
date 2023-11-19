@@ -121,20 +121,6 @@
     "vala": "tmp=`mktemp` && cd $dir && valac $fileName -o $tmp && $tmp"
   },
 
-  "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": [
-        "-xelatex",
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ]
-    }
-  ],
-
   "[markdown]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -251,10 +237,12 @@
   "cSpell.userWords": [
     "agda",
     "Bakbak",
+    "Beamer",
     "Bifunctor",
     "Brainfuck",
     "categorise",
     "Checkstyle",
+    "colorcoded",
     "colour",
     "concat",
     "Customisation",
@@ -304,4 +292,6 @@
   ],
   "csharp.referencesCodeLens.enabled": false,
   "csharp.inlayHints.types.forImplicitVariableTypes": true,
+  "platformio-ide.useBuiltinPIOCore": false,
+  "platformio-ide.useBuiltinPython": false,
 }
