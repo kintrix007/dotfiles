@@ -41,6 +41,10 @@ lspconfig.lua_ls.setup {
     single_file_support = true,
 }
 
+lspconfig.vala_ls.setup {
+    cmd = { "vala-language-server" },
+}
+
 lspconfig.metals.setup {
     cmd = { "metals" },
     capabilities = {
