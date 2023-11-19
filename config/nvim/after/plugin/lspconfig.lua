@@ -4,9 +4,9 @@ lspconfig.nil_ls.setup {
     cmd = { "nil" },
 }
 
--- lspconfig.rnix.setup {
---     cmd = { "rnix-lsp" },
--- }
+lspconfig.rnix.setup {
+    cmd = { "rnix-lsp" },
+}
 
 lspconfig.bashls.setup {
     cmd = { "bash-language-server", "start" },
