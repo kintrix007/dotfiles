@@ -1,79 +1,72 @@
--- This file can be loaded by calling `lua require('packer')` from your init.vim
+-- This file can be loaded by calling `lua require("packer")` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd.packadd('packer.nvim')
+vim.cmd.packadd("packer.nvim")
 
 -- Brings use 'formally' into scope.
 -- Packer would still inject it as a global without it,
 -- but this one is cleaner imo.
-return require('packer').startup(function(use)
+return require("packer").startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use("wbthomason/packer.nvim")
 
     -- THEMES
-    use('sainnhe/everforest', { as = 'everforest' })
-    use('sainnhe/sonokai', { as = 'sonokai' })
-    use 'olimorris/onedarkpro.nvim'
-    use 'rebelot/kanagawa.nvim' -- Best tbh
+    use("sainnhe/everforest", { as = "everforest" })
+    use("sainnhe/sonokai", { as = "sonokai" })
+    use("olimorris/onedarkpro.nvim")
+    use("rebelot/kanagawa.nvim") -- Best tbh
     -- THEMES END
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                          , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        "nvim-telescope/telescope.nvim", tag = "0.1.1",
+        -- or                          , branch = "0.1.x",
+        requires = { { "nvim-lua/plenary.nvim" } }
     }
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('nvim-treesitter/nvim-treesitter-context', { run = ':TSUpdate' })
-    use('nvim-treesitter/playground')
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+    use("nvim-treesitter/nvim-treesitter-context", { run = ":TSUpdate" })
+    use("nvim-treesitter/playground")
 
-    use 'mbbill/undotree'
+    use("mbbill/undotree")
 
     use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = true }
     }
 
-    use 'lukas-reineke/indent-blankline.nvim'
+    use("lukas-reineke/indent-blankline.nvim")
 
-    use 'tpope/vim-surround'
-    use {
-        'windwp/nvim-autopairs',
-    }
+    use("tpope/vim-surround")
+    use("windwp/nvim-autopairs")
 
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
+    use("numToStr/Comment.nvim")
 
     -- Git plugin
-    use 'tpope/vim-fugitive'
+    use("tpope/vim-fugitive")
 
     -- LSP
     use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v2.x",
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' }, -- Required
+            { "neovim/nvim-lspconfig" }, -- Required
             {
-               -- Optional
-                'williamboman/mason.nvim',
+                -- Optional
+                "williamboman/mason.nvim",
                 run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
+                    pcall(vim.cmd, "MasonUpdate")
                 end,
             },
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+            { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },   -- Required
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' },   -- Required
+            { "hrsh7th/nvim-cmp" },     -- Required
+            { "hrsh7th/cmp-nvim-lsp" }, -- Required
+            { "L3MON4D3/LuaSnip" },     -- Required
         }
     }
 
     -- Give it a try why not.
-    use('zbirenbaum/copilot.lua')
+    use("zbirenbaum/copilot.lua")
 end)
