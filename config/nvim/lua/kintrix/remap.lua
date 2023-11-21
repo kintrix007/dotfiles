@@ -8,8 +8,8 @@ vim.keymap.set("n", "<f5>", ":!./%<CR>", { desc = "Run Current File" })
 
 -- Cursor navigation
 -- Navigate editor lines more easily (when linewrap is on)
-vim.keymap.set("n", "<A-j>", "gj", {desc = "Go down an editor line"})
-vim.keymap.set("n", "<A-k>", "gk", {desc = "Go up an editor line"})
+vim.keymap.set("n", "<M-j>", "gj", {desc = "Go down an editor line"})
+vim.keymap.set("n", "<M-k>", "gk", {desc = "Go up an editor line"})
 
 -- Get out of my life
 -- I don't want most of what I have typed to disappear when
