@@ -10,11 +10,11 @@
 
 # Load flatpak aliases
 if [[ -f ~/.flatpak_aliases ]]; then
-	while read line; do
-		ALIAS=`echo $line | tr -s ' ' | cut -d' ' -f1`
-		PACK=`echo $line | tr -s ' ' | cut -d' ' -f2`
+	while read -r line; do
+		ALIAS=$(echo "$line" | tr -s ' ' | cut -d' ' -f1)
+		PACK=$(echo "$line" | tr -s ' ' | cut -d' ' -f2)
 		if [[ -n "$ALIAS" ]] && [[ -n "$PACK" ]]; then
-			alias $ALIAS="flatpak run $PACK"
+			alias "$ALIAS"="flatpak run $PACK"
 		fi
 	done < <(sed 's/#.*//' ~/.flatpak_aliases)
 fi
@@ -28,7 +28,8 @@ export NIX_SHELL_PRESERVE_PROMPT=1
 # Helper function to display git branch in shell prompt
 __ps1_get_git_branch() {
     if git branch >/dev/null 2>&1; then
-        local line=`git branch 2>/dev/null | grep '^\*'`
+        local line
+        line=$(git branch 2>/dev/null | grep '^\*')
         local branch=${line##\* }
         echo "($branch)"
     fi
@@ -46,7 +47,7 @@ __ps1_get_cmd_success() {
 # Display nix-shell instead of the username when inside a nix shell
 __ps1_get_user_or_nix() {
     if [[ -z $IN_NIX_SHELL ]]; then
-        printf "\e[92m$USER"
+        printf "\e[92m%s" "$USER"
     else
         if [[ "$SHELL" =~ /nix* ]]; then
             printf "\e[93mnix-shell"
@@ -76,4 +77,5 @@ which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 # ghcup-env
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
+# .bashrc should exit with 0 when sourced if there were not errors
 true
