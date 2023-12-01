@@ -26,6 +26,11 @@ lspconfig.hls.setup {
     single_file_support = true,
 }
 
+lspconfig.rust_analyzer.setup {
+    cmd = { "rust-analyzer" },
+    single_file_support = true,
+}
+
 -- lspconfig.clangd.setup {
 --     cmd = { "clangd" },
 --     single_file_support = true,
