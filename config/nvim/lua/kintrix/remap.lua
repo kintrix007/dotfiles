@@ -67,9 +67,9 @@ vim.keymap.set('n', '<C-p>', telescope.git_files, { desc = 'VSCode Ctrl+P' })
 -- vim.keymap.set('n', '<leader>fs', builtin.grep_string, {})
 -- Or:
 vim.keymap.set('n', '<leader>fs', function()
-    -- Handle if user does ^C
-    local ok, search = pcall(vim.fn.input, "Grep > ")
-    if not ok then return end
-
-    telescope.grep_string({ search = search })
+    -- local ok, search = pcall(vim.fn.input, "Grep > ")
+    -- if not ok then return end
+    --
+    -- telescope.grep_string({ search = search })
+    telescope.grep_string()
 end, { desc = '[F]ile [S]earch with grep' })
