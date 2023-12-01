@@ -60,6 +60,13 @@ lspconfig.metals.setup {
     single_file_support = true,
 }
 
+lspconfig.blueprint_ls.setup {
+    cmd = { "blueprint-compiler", "lsp" },
+    single_file_support = true,
+}
+
+lspconfig.tsserver.setup {}
+
 lspconfig.volar.setup {
     cmd = { "vue-language-server", "--stdio" },
     -- Takeover mode:
