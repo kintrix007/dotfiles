@@ -79,4 +79,5 @@ lspconfig.volar.setup {
     -- filetypes = {"vue"},
 }
 
--- lspconfig.csharp_ls.setup {}
+lspconfig.jdtls.setup {}
+lspconfig.csharp_ls.setup {}
