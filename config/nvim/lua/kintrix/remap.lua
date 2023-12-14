@@ -1,5 +1,3 @@
-local telescope = require('telescope.builtin')
-
 -- Leader key
 vim.g.mapleader = " "
 
@@ -58,18 +56,3 @@ vim.keymap.set("v", "/", "/\\v")
 
 -- There has to be a better way than this, right?
 -- vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })
-
--- Telescope
-vim.keymap.set('n', '<leader><C-p>', telescope.find_files, { desc = '[F]ind [F]iles' })
-vim.keymap.set('n', '<C-p>', telescope.git_files, { desc = 'VSCode Ctrl+P' })
-
--- Add grep search
--- vim.keymap.set('n', '<leader>fs', builtin.grep_string, {})
--- Or:
-vim.keymap.set('n', '<leader>fs', function()
-    -- local ok, search = pcall(vim.fn.input, "Grep > ")
-    -- if not ok then return end
-    --
-    -- telescope.grep_string({ search = search })
-    telescope.grep_string()
-end, { desc = '[F]ile [S]earch with grep' })
