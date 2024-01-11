@@ -11,10 +11,11 @@ return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
 
     -- THEMES
-    use("sainnhe/everforest", { as = "everforest" })
-    use("sainnhe/sonokai", { as = "sonokai" })
-    use("olimorris/onedarkpro.nvim")
-    use("rebelot/kanagawa.nvim") -- Best tbh
+    use { "sainnhe/everforest", as = "everforest" }
+    use { "sainnhe/sonokai", as = "sonokai" }
+    use { "olimorris/onedarkpro.nvim" }
+    use { "rebelot/kanagawa.nvim" } -- Best tbh
+    use { "catppuccin/nvim", as = "catppuccin" }
     -- THEMES END
 
     use {
