@@ -21,6 +21,8 @@ fi
 
 # Set default editor
 export EDITOR=vim
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 
 # Use the same PS1 variable for nix shells as well
 export NIX_SHELL_PRESERVE_PROMPT=1
