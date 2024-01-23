@@ -50,11 +50,12 @@
   "gitlens.statusBar.format": "${author}, ${agoOrDate}, via '${pullRequest}'",
   "gitlens.hovers.avatars": false,
 
+  "keyboard.dispatch": "keyCode",
   "vim.easymotion": true,
-  "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
+  "vim.hlsearch": false,
+  "vim.incsearch": true,
 
   "vim.leader": "<space>",
   "vim.handleKeys": {
@@ -292,6 +293,6 @@
   ],
   "csharp.referencesCodeLens.enabled": false,
   "csharp.inlayHints.types.forImplicitVariableTypes": true,
-  "platformio-ide.useBuiltinPIOCore": false,
-  "platformio-ide.useBuiltinPython": false,
+  "git.openRepositoryInParentFolders": "never",
+  "window.zoomLevel": 1,
 }
