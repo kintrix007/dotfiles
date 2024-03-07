@@ -31,18 +31,25 @@ lspconfig.rust_analyzer.setup {
     single_file_support = true,
 }
 
--- lspconfig.clangd.setup {
---     cmd = { "clangd" },
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+lspconfig.clangd.setup {
+    cmd = { "clangd" },
+    single_file_support = true,
+    capabilities = capabilities,
+}
+
+-- lspconfig.ccls.setup {
+--     cmd = { "ccls" },
 --     single_file_support = true,
 -- }
 
-lspconfig.ccls.setup {
-    cmd = { "ccls" },
+lspconfig.lua_ls.setup {
+    cmd = { "lua-language-server" },
     single_file_support = true,
 }
 
-lspconfig.lua_ls.setup {
-    cmd = { "lua-language-server" },
+lspconfig.pyright.setup {
     single_file_support = true,
 }
 
