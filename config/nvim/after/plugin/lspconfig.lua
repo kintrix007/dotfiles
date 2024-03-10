@@ -26,6 +26,10 @@ lspconfig.hls.setup {
     single_file_support = true,
 }
 
+lspconfig.purescriptls.setup {
+    cmd = { "purs-language-server", "--stdio" },
+}
+
 lspconfig.rust_analyzer.setup {
     cmd = { "rust-analyzer" },
     single_file_support = true,
