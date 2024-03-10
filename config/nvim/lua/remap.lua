@@ -24,7 +24,7 @@ vim.keymap.set("t", [[<C-\><C-\>]], [[<C-\><C-n>]], { desc = "Exit terminal mode
 
 -- Why the hell is this not silent?
 vim.keymap.set("n", "<leader>x", function()
-    vim.cmd("!chmod +x %")
+  vim.cmd("!chmod +x %")
 end, { silent = true, desc = "Make current file executable" })
 
 -- Tab navigation
