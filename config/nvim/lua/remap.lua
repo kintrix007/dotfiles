@@ -6,8 +6,8 @@ vim.keymap.set("n", "<f5>", ":!./%<CR>", { desc = "Run Current File" })
 
 -- Cursor navigation
 -- Navigate editor lines more easily (when linewrap is on)
-vim.keymap.set("n", "<M-j>", "gj", {desc = "Go down an editor line"})
-vim.keymap.set("n", "<M-k>", "gk", {desc = "Go up an editor line"})
+vim.keymap.set("n", "<M-j>", "gj", { desc = "Go down an editor line" })
+vim.keymap.set("n", "<M-k>", "gk", { desc = "Go up an editor line" })
 
 -- Get out of my life
 -- I don't want most of what I have typed to disappear when
@@ -16,11 +16,6 @@ vim.keymap.set("i", "<C-u>", "<Nop>", { desc = "Remove Ctrl+U" })
 
 -- Project navigation
 vim.keymap.set("n", "<leader>fw", vim.cmd.Ex, { desc = "[F]older Vie[w]" })
-
--- I guess it's LSP?
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show [E]rror" })
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "[F]ormat buffer" })
-vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "[F]ormat buffer" })
 
 -- Terminal
 vim.keymap.set("n", "<leader>cf", ":terminal<CR>", { desc = "[C]onsole [F]ullscreen" })
@@ -53,6 +48,3 @@ vim.keymap.set("n", "<leader>r", [[:%s/\v//g<Left><Left><Left>]], { desc = "[R]e
 vim.keymap.set("v", "<leader>r", [[:s/\%V\v//g<Left><Left><Left>]], { desc = "[R]eplace in [V]isual Selection" })
 vim.keymap.set("n", "/", "/\\v")
 vim.keymap.set("v", "/", "/\\v")
-
--- There has to be a better way than this, right?
--- vim.api.nvim_set_keymap("i", "<C-y>", "copilot#Accept('<CR>')", { expr = true, silent = true })

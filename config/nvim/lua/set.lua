@@ -2,6 +2,8 @@
 -- vim.opt.guicursor = ""
 
 vim.cmd('colorscheme kanagawa')
+vim.opt.signcolumn = "yes"
+
 vim.opt.spell = true;
 
 vim.opt.nu = true
@@ -28,8 +30,6 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
