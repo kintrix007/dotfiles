@@ -1,11 +1,11 @@
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-
 local root_files = {
-    "stack.yaml",
-    "package.yaml",
+  ".luarc.json",
+  ".luarc.jsonc",
+  ".luacheckrc",
+  ".stylua.toml",
+  "stylua.toml",
+  "selene.toml",
+  "selene.yml",
 }
 
 local paths = vim.fs.find(root_files, { upward = true, stop = vim.env.HOME })
@@ -16,8 +16,8 @@ if root_dir == nil then
 end
 
 vim.lsp.start({
-    name = "Haskell Language Server",
-    cmd = { "haskell-language-server-wrapper", "--lsp" },
+    name = "Lua Language Server",
+    cmd = { "lua-language-server" },
     root_dir = root_dir,
     single_file_support = true,
 })

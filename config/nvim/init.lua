@@ -1,3 +1,1 @@
-require("kintrix")
-
--- print("Hello Vim")
+require("init")
