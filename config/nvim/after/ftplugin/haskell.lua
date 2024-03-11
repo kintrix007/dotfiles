@@ -20,4 +20,11 @@ vim.lsp.start({
   cmd = { "haskell-language-server-wrapper", "--lsp" },
   root_dir = root_dir,
   single_file_support = true,
+
+  settings = {
+    haskell = {
+      cabalFormattingProvider = "cabalfmt",
+      formattingProvider = "stylish-haskell",
+    }
+  }
 })
