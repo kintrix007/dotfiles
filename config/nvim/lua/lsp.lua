@@ -25,3 +25,66 @@ vim.api.nvim_create_autocmd("LspAttach", {
     buffermap("n", "gr", vim.lsp.buf.references, { desc = "[G]o the [r]eferences" })
   end,
 })
+
+-- Add borders to floating windows --
+
+vim.diagnostic.config({
+  float = { border = "rounded" },
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  { border = "rounded" }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  { border = "rounded" }
+)
+
+-- Set diagnostic signs --
+
+-- TODO: Remove v0.9 compat once v0.10 is out
+local function set_up_signs_9(opts)
+  local function sign_define(args)
+    vim.fn.sign_define(args.name, {
+      texthl = args.name,
+      text = args.text,
+      numhl = ''
+    })
+  end
+
+  sign_define({ name = "DiagnosticSignError", text = opts.error })
+  sign_define({ name = "DiagnosticSignWarn", text = opts.warn })
+  sign_define({ name = "DiagnosticSignHint", text = opts.hint })
+  sign_define({ name = "DiagnosticSignInfo", text = opts.info })
+end
+
+local function set_up_signs_10(opts)
+  vim.diagnostic.config({
+    signs = {
+      text = {
+        [vim.diagnostic.severity.ERROR] = opts.error,
+        [vim.diagnostic.severity.WARN] = opts.warn,
+        [vim.diagnostic.severity.HINT] = opts.hint,
+        [vim.diagnostic.severity.INFO] = opts.info,
+      },
+    },
+  })
+end
+
+local ver = vim.version()
+local set_signs
+if (ver.minor > 9)
+then
+  set_signs = set_up_signs_10
+else
+  set_signs = set_up_signs_9
+end
+
+set_signs {
+  error = "!!",
+  warn = "!",
+  hint = "?",
+  info = "i",
+}
