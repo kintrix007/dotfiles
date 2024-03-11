@@ -75,8 +75,7 @@ end
 
 local ver = vim.version()
 local set_signs
-if (ver.minor > 9)
-then
+if (ver.minor > 9) then
   set_signs = set_up_signs_10
 else
   set_signs = set_up_signs_9
@@ -88,3 +87,61 @@ set_signs {
   hint = "?",
   info = "i",
 }
+
+-- Enable simple tab completion --
+
+vim.opt.completeopt = { "menuone", "noinsert" }
+-- If you get too many messages printed, look into this:
+-- vim.opt.shortmess:append("c")
+
+local function tab_complete()
+  local in_popup = vim.fn.pumvisible() ~= 0
+
+  if in_popup then
+    return "<Down>"
+  end
+
+  local c = vim.fn.col('.') - 1
+  local is_whitespace = c == 0 or vim.fn.getline('.'):sub(c, c):match('%s')
+
+  if is_whitespace then
+    return "<Tab>"
+  end
+
+  -- I do not really understand why this works
+  local lsp_completion = vim.bo.omnifunc == 'v:lua.vim.lsp.omnifunc'
+
+  if lsp_completion then
+    -- trigger lsp code completion
+    return '<C-x><C-o>'
+  end
+
+  -- suggest words in current buffer
+  return '<C-x><C-n>'
+end
+
+local function tab_prev()
+  local in_popup = vim.fn.pumvisible() ~= 0
+
+  if in_popup then
+    return "<Up>"
+  end
+
+  return "<Tab>"
+end
+
+local function complete()
+  local in_popup = vim.fn.pumvisible() ~= 0
+  local c = vim.fn.col('.') - 1
+  local is_whitespace = c == 0 or vim.fn.getline('.'):sub(c, c):match('%s')
+
+  if in_popup or is_whitespace then
+    return "<C-y>"
+  end
+
+  return "<C-x><C-o><C-y>"
+end
+
+vim.keymap.set("i", "<Tab>", tab_complete, { expr = true })
+vim.keymap.set("i", "<S-Tab>", tab_prev, { expr = true })
+vim.keymap.set("i", "<C-y>", complete, { expr = true })
