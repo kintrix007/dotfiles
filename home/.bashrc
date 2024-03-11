@@ -19,6 +19,8 @@ if [[ -f ~/.flatpak_aliases ]]; then
 	done < <(sed 's/#.*//' ~/.flatpak_aliases)
 fi
 
+# set -o vi
+
 # Set default editor
 export EDITOR=vim
 export HISTSIZE=10000
@@ -64,7 +66,7 @@ __ps1_get_user_or_nix() {
 }
 
 # Set console prompt
-PROMPT_COMMAND='CMD_SUCCESS=$?'
+PROMPT_COMMAND=('CMD_SUCCESS=$?')
 PS1='╭──\[\e[1m\]($(__ps1_get_user_or_nix)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]) '
 PS1+='$(__ps1_get_cmd_success) '
 PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\] '
