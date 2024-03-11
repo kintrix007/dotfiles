@@ -1,8 +1,9 @@
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
 local root_files = {
-  "bower.json",
-  "spago.dhall",
-  "spago.yaml",
-  "shell.nix",
   ".git",
 }
 
@@ -14,6 +15,8 @@ if root_dir == nil then
 end
 
 vim.lsp.start({
-  cmd = { "purs", "ide", "server" },
+  name = "Bash Language Server",
+  cmd = { "bash-language-server", "start" },
   root_dir = root_dir,
+  single_file_support = true,
 })

@@ -1,9 +1,6 @@
 local root_files = {
-  "bower.json",
-  "spago.dhall",
-  "spago.yaml",
-  "shell.nix",
-  ".git",
+  "Cargo.toml",
+  "rust-project.json",
 }
 
 local paths = vim.fs.find(root_files, { upward = true, stop = vim.env.HOME })
@@ -14,6 +11,8 @@ if root_dir == nil then
 end
 
 vim.lsp.start({
-  cmd = { "purs", "ide", "server" },
+  name = "Rust Analyzer",
+  cmd = { "rust-analyzer" },
   root_dir = root_dir,
+  single_file_support = true,
 })
