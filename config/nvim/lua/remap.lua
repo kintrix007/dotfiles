@@ -48,3 +48,11 @@ vim.keymap.set("n", "<leader>r", [[:%s/\v//g<Left><Left><Left>]], { desc = "[R]e
 vim.keymap.set("v", "<leader>r", [[:s/\%V\v//g<Left><Left><Left>]], { desc = "[R]eplace in [V]isual Selection" })
 vim.keymap.set("n", "/", "/\\v")
 vim.keymap.set("v", "/", "/\\v")
+
+-- Git
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "[G]it [s]tatus" })
+vim.keymap.set("n", "<leader>gl", function() vim.cmd.Git("log") end, { desc = "[G]it [l]og" })
+vim.keymap.set("n", "<leader>gb", function() vim.cmd.Git("blame") end, { desc = "[G]it [l]og" })
+
+-- Undotree
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Show [U]ndotree' })
