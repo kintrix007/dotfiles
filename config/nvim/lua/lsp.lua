@@ -1,6 +1,6 @@
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show [E]rror" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { desc = "Go to next [d]iagnostic" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { desc = "Go to previous [d]iagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [d]iagnostic" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [d]iagnostic" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "LSP keybinds",
