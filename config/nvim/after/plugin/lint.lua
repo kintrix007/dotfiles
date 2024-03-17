@@ -2,7 +2,9 @@ local lint = require("lint")
 
 local linters = {
   markdown = { "markdownlint" },
-  gitcommit = { "commitlint" },
+  -- Does not allow global config...
+  -- gitcommit = { "commitlint" },
+  gitcommit = { "gitlint" },
   javascript = { "eslint" },
   javascriptreact = { "eslint" },
   typescript = { "eslint" },
