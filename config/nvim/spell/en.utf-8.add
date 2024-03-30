@@ -16,3 +16,9 @@ struct
 Arduino
 Destructure
 jiggliness
+GDB
+endianness
+GC
+Nixpkgs
+nixpkgs
+linter
