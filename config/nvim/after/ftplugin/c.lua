@@ -8,6 +8,7 @@ local root_files = {
   "compile_commands.json",
   "compile_flags.txt",
   "configure.ac",
+  "meson.build",
   ".git",
 }
 
