@@ -13,6 +13,7 @@ local root_files = {
   "stylua.toml",
   "selene.toml",
   "selene.yml",
+  ".git",
 }
 
 local paths = vim.fs.find(root_files, { upward = true, stop = vim.env.HOME })
@@ -27,4 +28,8 @@ vim.lsp.start({
   cmd = { "lua-language-server" },
   root_dir = root_dir,
   single_file_support = single_file_support,
+
+  settings = {
+    Lua = {},
+  },
 })
