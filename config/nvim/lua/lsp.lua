@@ -82,9 +82,9 @@ else
 end
 
 set_signs {
-  error = "!!",
-  warn = "!",
-  hint = "?",
+  error = "!",
+  warn = "?",
+  hint = "*",
   info = "i",
 }
 
