@@ -33,4 +33,6 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+local textwidth = 80
+-- vim.opt.textwidth = textwidth
+vim.opt.colorcolumn = tostring(textwidth)
