@@ -1,8 +1,8 @@
 local single_file_support = true
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 local root_files = {
@@ -24,4 +24,12 @@ vim.lsp.start({
   cmd = { "elm-language-server" },
   root_dir = root_dir,
   single_file_support = single_file_support,
+  init_options = {
+    elm = {
+      disableElmLSDiagnostics = false,
+      elmReviewDiagnostics = "off",
+      onlyUpdateDiagnosticsOnSave = false,
+      skipInstallPackageConfirmation = false
+    }
+  }
 })
