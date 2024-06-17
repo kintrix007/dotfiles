@@ -17,4 +17,4 @@ KeyBindings=default
 ScrollBarPosition=2
 
 [Terminal Features]
-BellMode=2
+BellMode=1
