@@ -34,7 +34,7 @@ local triggers = {
   "InsertLeave",
 }
 
-print(vim.inspect(lint.linters_by_ft))
+-- print(vim.inspect(lint.linters_by_ft))
 lint.linters_by_ft = {}
 
 for ft, linter in pairs(linters) do
