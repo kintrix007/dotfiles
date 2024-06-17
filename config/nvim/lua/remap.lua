@@ -31,10 +31,12 @@ end, { silent = true, desc = "Make current file executable" })
 -- Note to self: g<Tab> cycles between the last used tabs
 vim.keymap.set("n", "<leader>t", vim.cmd.tabnew, { desc = "New [T]ab" }) -- May remove this
 vim.keymap.set("n", "<leader><C-t>", vim.cmd.tabnew, { desc = "New [T]ab" })
+-- Or do <C-t> on the telescope screen
+-- Also <C-q> to put things on a quickfix list
+vim.keymap.set("n", "<C-h>", vim.cmd.tabprevious, { desc = "Go to previous tab" })
+vim.keymap.set("n", "<C-l>", vim.cmd.tabnext, { desc = "Go to next tab" })
 vim.keymap.set("n", "<left>", vim.cmd.tabprevious, { desc = "Go to previous tab" })
-vim.keymap.set("n", "<C-j>", vim.cmd.tabprevious, { desc = "Go to previous tab" })
 vim.keymap.set("n", "<right>", vim.cmd.tabnext, { desc = "Go to next tab" })
-vim.keymap.set("n", "<C-k>", vim.cmd.tabnext, { desc = "Go to next tab" })
 
 -- System clipbloard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[Y]ank to system clipbloard" })
