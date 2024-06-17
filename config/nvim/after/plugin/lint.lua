@@ -2,6 +2,7 @@ local lint = require("lint")
 
 local linters = {
   markdown = { "markdownlint" },
+  rst = { "vale" },
   -- Does not allow global config...
   -- gitcommit = { "commitlint" },
   gitcommit = { "gitlint" },
@@ -17,14 +18,24 @@ local linters = {
   -- sh = { "shellcheck" },
   json = { "jsonlint" },
   yaml = { "yamllint" },
+  terraform = { "tflint" },
+  dockerfile = { "hadolint" },
+  clojure = { "clj-kondo" },
+  janet = { "janet" },
 }
 
 local triggers = {
   "BufEnter",
+  "BufWinEnter",
   "BufWritePost",
+  -- Not a good idea for all linters.
+  -- I should separate the ones that actually support this.
   "TextChanged",
   "InsertLeave",
 }
+
+print(vim.inspect(lint.linters_by_ft))
+lint.linters_by_ft = {}
 
 for ft, linter in pairs(linters) do
   local cmd = linter[1]
