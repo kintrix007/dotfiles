@@ -25,8 +25,8 @@ vim.lsp.start({
   settings = {
     haskell = {
       cabalFormattingProvider = "cabalfmt",
-      -- formattingProvider = "stylish-haskell",
-      formattingProvider = "fourmolu",
+      formattingProvider = "stylish-haskell",
+      -- formattingProvider = "fourmolu",
       plugin = {
         ["stylish-haskell"] = {
           globalOn = true,
