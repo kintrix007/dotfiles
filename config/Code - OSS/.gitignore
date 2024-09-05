@@ -2,34 +2,38 @@
 
 # Ignore all directories except 'User/'
 Backups/
-blob_storage/
 Cache/
+CachedConfigurations
+CachedData
+CachedExtensionVSIXs/
 CachedExtensions/
 CachedProfilesData/
-CachedData
-CachedConfigurations
-CachedExtensionVSIXs/
 Code Cache/
-code.lock
 Cookies
 Cookies-journal
 Crash Reports/
 Crashpad/
-databases/
 DawnCache/
 Dictionaries/
 GPUCache/
-languagepacks.json
 Local Storage/
-logs/
-machineid
 Network Persistent State
 Preferences
 Service Worker/
 Session Storage/
-storage.json
+Shared Dictionary/
+SharedStorage
 TransportSecurity
+Trust Tokens
+Trust Tokens-journal
 WebStorage/
+blob_storage/
+code.lock
+databases/
+languagepacks.json
+logs/
+machineid
+storage.json
 
 # User/
 User/globalStorage/
