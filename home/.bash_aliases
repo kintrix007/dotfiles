@@ -5,21 +5,20 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -lA'
 
-# XBPS aliases
-alias xi='sudo xbps-install'	# Use '\xi' for 'xi' from 'xtools'
-alias xq='xbps-query'		# Use '\xq' for 'xq' from 'xtools'
-alias xr='sudo xbps-remove'
-
 # Git aliases
-alias ga='git add'
-alias gcm='git commit -m'
-# Technically collides with GhostScript's `gs`...
-# But quite frankly, who cares.
-alias gs='git status'
-alias gd='git diff'
+# alias ga='git add'
+# alias gcm='git commit -m'
+# alias gs='git status'
+# alias gd='git diff'
+
+# XBPS aliases
+# alias xi='sudo xbps-install'	# Use '\xi' for 'xi' from 'xtools'
+# alias xq='xbps-query'		# Use '\xq' for 'xq' from 'xtools'
+# alias xr='sudo xbps-remove'
+# alias copy='wl-copy'
 
 # For neovim
-alias vim='nvim'
+# alias vim='nvim'
 
 # Funi
 idot() {
@@ -33,3 +32,12 @@ idot() {
 
 alias :q='idot'
 alias :wq='idot'
+
+alias nix-pd='nix develop github:headblockhead/nix-playdatesdk && echo'
+alias nix-shell-unstable='nix-shell -I https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz'
+
+alias espresso='wine ~/bin/espresso/bin/espresso.exe'
+alias espresso-gui='wine ~/bin/espresso/espresso-gui.exe'
+
+alias tmpd='cd $(mktemp -d)'
+alias tmp.hs='nix-shell -p ghc haskell-language-server --command "cd \"$(mktemp -d)\" && touch Main.hs; return"'
