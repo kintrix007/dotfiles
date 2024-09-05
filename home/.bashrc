@@ -46,7 +46,9 @@ __ps1_get_cmd_success() {
     fi
 }
 
-# Display nix-shell instead of the username when inside a nix shell
+# Display useful information about the current shell instead of the username
+# when relevant. For example, display 'nix-shell' instead, while in a Nix
+# shell.
 __ps1_get_user_or_shell() {
     if [[ -z $IN_NIX_SHELL ]]; then
         if [[ -z $GUIX_ENVIRONMENT ]]; then
@@ -79,5 +81,5 @@ which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 # ghcup-env
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
-# .bashrc should exit with 0 when sourced if there were not errors
+# .bashrc should exit with 0 when sourced if there were no errors
 true
