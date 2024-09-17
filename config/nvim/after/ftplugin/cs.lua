@@ -19,7 +19,7 @@ end
 local pid = vim.fn.getpid()
 
 vim.lsp.start({
-  name = "C# Language Server",
+  name = "OmniSharp Language Server",
   cmd = { "OmniSharp", "-lsp", "--hostPID", tostring(pid) },
   root_dir = root_dir,
   single_file_support = single_file_support,
