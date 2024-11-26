@@ -18,7 +18,8 @@ local port = os.getenv("GDScript_Port") or "6005"
 
 vim.lsp.start({
   name = "GDScript Language Server",
-  cmd = vim.lsp.rpc.connect("127.0.0.1", port),
+  -- cmd = vim.lsp.rpc.connect("127.0.0.1", port),
+  cmd = { "nc", "localhost", port },
   root_dir = root_dir,
   single_file_support = single_file_support,
 })
