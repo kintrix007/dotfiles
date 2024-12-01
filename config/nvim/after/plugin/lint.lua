@@ -47,6 +47,8 @@ end
 
 vim.api.nvim_create_autocmd(triggers, {
   callback = function()
-    lint.try_lint()
+    if vim.o.buftype == "" then
+      lint.try_lint()
+    end
   end,
 })
