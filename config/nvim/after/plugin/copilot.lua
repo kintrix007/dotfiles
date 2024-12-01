@@ -1,4 +1,8 @@
-local copilot = require("copilot")
+local copilot
+
+if not pcall(function() copilot = require("copilot") end) then
+  return
+end
 
 copilot.setup {
   panel = {
