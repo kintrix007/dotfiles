@@ -11,8 +11,8 @@
 # Load flatpak aliases
 if [[ -f ~/.flatpak_aliases ]]; then
 	while read -r line; do
-		ALIAS=$(echo "$line" | tr -s ' ' | cut -d' ' -f1)
-		PACK=$(echo "$line" | tr -s ' ' | cut -d' ' -f2)
+		ALIAS="$(echo "$line" | tr -s ' ' | cut -d' ' -f1)"
+		PACK="$(echo "$line" | tr -s ' ' | cut -d' ' -f2)"
 		if [[ -n "$ALIAS" ]] && [[ -n "$PACK" ]]; then
 			alias "$ALIAS"="flatpak run $PACK"
 		fi
@@ -73,13 +73,15 @@ PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\] '
 PS1+=$'\n╰─\[\e[0;1m\]$\[\e[0m\] '
 
 # Hook direnv into the shell
-which direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
+if which direnv >/dev/null 2>&1; then
+    eval "$(direnv hook bash)"
+fi
 
 # Rustup
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[[  -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # ghcup-env
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+[[  -f "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env"
 
 # .bashrc should exit with 0 when sourced if there were no errors
 true
