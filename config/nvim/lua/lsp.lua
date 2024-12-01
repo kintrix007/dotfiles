@@ -62,6 +62,12 @@ end
 
 local function set_up_signs_10(opts)
   vim.diagnostic.config({
+    virtual_text = true,
+
+    float = false,
+
+    sererity_sort = true,
+
     signs = {
       text = {
         [vim.diagnostic.severity.ERROR] = opts.error,
@@ -69,6 +75,18 @@ local function set_up_signs_10(opts)
         [vim.diagnostic.severity.HINT] = opts.hint,
         [vim.diagnostic.severity.INFO] = opts.info,
       },
+      numhl = {
+        [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+        -- [vim.diagnostic.severity.WARN] = "WarningMsg",
+        -- [vim.diagnostic.severity.HINT] = "HintMsg",
+        -- [vim.diagnostic.severity.INFO] = "InfoMsg",
+      },
+      -- linehl = {
+      --   [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+      --   [vim.diagnostic.severity.WARN] = "WarningMsg",
+      --   [vim.diagnostic.severity.HINT] = "HintMsg",
+      --   [vim.diagnostic.severity.INFO] = "InfoMsg",
+      -- },
     },
   })
 end
