@@ -11,8 +11,9 @@ vim.keymap.set("n", "<M-k>", "gk", { desc = "Go up an editor line" })
 
 -- Get out of my life
 -- I don't want most of what I have typed to disappear when
--- I accidentally hit <C-u> instead of <C-Y>
-vim.keymap.set("i", "<C-u>", "<Nop>", { desc = "Remove Ctrl+U" })
+-- I accidentally hit <C-u> instead of <C-y>
+vim.keymap.set("i", "<C-u>", "<Nop>", { desc = "Unbind Ctrl+t" })
+vim.keymap.set("i", "<C-t>", "<Nop>", { desc = "Unbind Ctrl+t" })
 
 -- Project navigation
 vim.keymap.set("n", "<leader>fw", vim.cmd.Ex, { desc = "[F]older Vie[w]" })
