@@ -41,3 +41,18 @@ alias espresso-gui='wine ~/bin/espresso/espresso-gui.exe'
 
 alias tmpd='cd $(mktemp -d)'
 alias tmp.hs='nix-shell -p ghc haskell-language-server --command "cd \"$(mktemp -d)\" && touch Main.hs; return"'
+alias tmp.gd='nix-shell -p godot_4 --command "cd \"$(mktemp -d)\" && cat <<EOF > main.gd
+#!/usr/bin/env -S godot4 --headless --script
+
+extends MainLoop
+
+func _initialize() -> void:
+	print(\"Started.\")
+
+func _process(delta: float) -> bool:
+	return true
+
+func _finalize() -> void:
+	print(\"Exited.\")
+EOF
+return"'
