@@ -17,7 +17,7 @@ local home_manager_config_path = "~/.config/home-manager/home.nix"
 
 local nixd_options = {
   nixos = {
-    expr = "(import <nixpkgs/modules> { }).options",
+    -- expr = "(import <nixpkgs/modules> { }).options",
     -- ? For flake setup?
     -- expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.k-on.options',
   },
@@ -43,7 +43,8 @@ vim.lsp.start({
   settings = {
     nixd = {
       nixpkgs = {
-        expr = "import <nixpkgs> { }",
+        -- expr = "import <nixpkgs> { }",
+        expr = "<nixpkgs>",
       },
 
       formatting = {
