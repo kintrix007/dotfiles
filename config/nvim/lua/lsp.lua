@@ -26,22 +26,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- Add borders to floating windows --
-
-vim.diagnostic.config({
-  float = { border = "rounded" },
-})
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  { border = "rounded" }
-)
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  { border = "rounded" }
-)
-
 -- Set diagnostic signs --
 
 -- TODO: Remove v0.9 compat once v0.10 is out
@@ -110,7 +94,7 @@ set_signs {
 
 vim.opt.completeopt = { "menuone", "noinsert" }
 -- If you get too many messages printed, look into this:
--- vim.opt.shortmess:append("c")
+vim.opt.shortmess:append("c")
 
 local function tab_complete()
   local in_popup = vim.fn.pumvisible() ~= 0
@@ -163,3 +147,19 @@ end
 vim.keymap.set("i", "<Tab>", tab_complete, { expr = true })
 vim.keymap.set("i", "<S-Tab>", tab_prev, { expr = true })
 vim.keymap.set("i", "<C-y>", complete, { expr = true })
+
+-- Add borders to floating windows --
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  { border = "rounded" }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  { border = "rounded" }
+)
+
+vim.diagnostic.config {
+  float = { border = "rounded" },
+}
