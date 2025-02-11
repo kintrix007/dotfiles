@@ -1,10 +1,14 @@
 -- Sets fat cursor in insert mode too
 -- vim.opt.guicursor = ""
 
-vim.cmd('colorscheme kanagawa')
+vim.cmd("colorscheme kanagawa")
 vim.opt.signcolumn = "yes"
 
-vim.opt.spell = true;
+-- vim.opt.cursorline = true
+-- vim.cmd("highlight LineNr guifg=#a26b99")
+vim.cmd("highlight LineNr guifg=#9c9789")
+
+vim.opt.spell = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
