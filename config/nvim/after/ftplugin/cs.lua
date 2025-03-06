@@ -1,5 +1,10 @@
 local single_file_support = false
 
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
 local root_files = {
   -- FIXME: Glob patterns don't work
   "*.sln",
