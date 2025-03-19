@@ -26,6 +26,4 @@ sudo npm install -g npm
 ../installers/itch-desktop.sh
 ../installers/nerd-fonts.sh
 
-for job in `jobs -p`; do
-  wait $job
-done
+wait

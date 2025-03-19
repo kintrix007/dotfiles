@@ -25,6 +25,4 @@ sudo dnf install -y \
 
 ../installers/nix.sh
 
-for job in `jobs -p`; do
-  wait $job
-done
+wait
