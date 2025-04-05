@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     buffermap("n", "K", vim.lsp.buf.hover, { desc = "Show hover hint" })
     buffermap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Show Signature help" })
     buffermap("n", "<F2>", vim.lsp.buf.rename, { desc = "Rename symbol" })
-    buffermap("n", "<F3>", vim.lsp.buf.format, { desc = "Format buffer" })
+    -- buffermap("n", "<F3>", vim.lsp.buf.format, { desc = "Format buffer" })
     buffermap("n", "<F4>", vim.lsp.buf.code_action, { desc = "Code action" })
     buffermap("n", "<leader>ff", vim.lsp.buf.format, { desc = "[F]ormat buffer" })
   end,
