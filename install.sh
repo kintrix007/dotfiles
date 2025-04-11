@@ -41,20 +41,20 @@ function run-setup() {
 
 function symlink-files() {
   # Install home dotfiles
-  for f in "$SRC"/home/{*,.*}; do
-    ln -siv "$SRC/home/$f" ~/
+  for f in "$SRC"/home/.*; do
+    ln -siv "$f" ~/ || true
   done
 
   # Install config files
   mkdir -p ~/.config/
-  for f in "$SRC"/config/{*,.*}; do
-    ln -siv "$f" ~/.config/
+  for f in "$SRC"/config/*; do
+    ln -siv "$f" ~/.config/ || true
   done
 
   # Install local bin
   mkdir -p ~/.local/bin
-  for f in "$SRC"/bin/{*,.*}; do
-    ln -siv "$f" ~/.local/bin/
+  for f in "$SRC"/bin/*; do
+    ln -siv "$f" ~/.local/bin/ || true
   done
 }
 
