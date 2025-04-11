@@ -1,4 +1,4 @@
-local single_file_support = false
+local single_file_support = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
