@@ -1,0 +1,6 @@
+title-hidden = true
+hide-mouse-when-typing = true # Bro why no work
+
+[font]
+normal = ["FiraCode Nerd Font", "monospace"]
+size = 13
