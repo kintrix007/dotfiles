@@ -4,7 +4,7 @@
 [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
 [ -f "$HOME/.XCompose" ] && export XCOMPOSEFILE="$HOME/.XCompose"
-[ -f "$HOME/Android/Sdk" ] && export ANDROID_HOME="$HOME/Android/Sdk"
+[ -d "$HOME/Android/Sdk" ] && export ANDROID_HOME="$HOME/Android/Sdk"
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
