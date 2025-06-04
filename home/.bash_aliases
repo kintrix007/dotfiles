@@ -6,9 +6,8 @@ alias ls='ls --color=auto'
 alias ll='ls -lA'
 
 # Git aliases
-# alias ga='git add'
-# alias gcm='git commit -m'
-# alias gs='git status'
+alias ga='git add'
+alias gs='git status'
 # alias gd='git diff'
 
 # XBPS aliases
@@ -16,9 +15,6 @@ alias ll='ls -lA'
 # alias xq='xbps-query'		# Use '\xq' for 'xq' from 'xtools'
 # alias xr='sudo xbps-remove'
 # alias copy='wl-copy'
-
-# For neovim
-# alias vim='nvim'
 
 # Funi
 idot() {
