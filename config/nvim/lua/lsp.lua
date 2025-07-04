@@ -76,6 +76,7 @@ local function set_up_signs_10(opts)
 end
 
 local ver = vim.version()
+
 local set_signs
 if (ver.minor > 9) then
   set_signs = set_up_signs_10
@@ -150,16 +151,21 @@ vim.keymap.set("i", "<C-y>", complete, { expr = true })
 
 -- Add borders to floating windows --
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  { border = "rounded" }
-)
+local border_style = "rounded"
+if ver.minor >= 11 or ver.major > 0 then
+  vim.o.winborder = border_style
+else
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.buf.hover,
+    { border = border_style }
+  )
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  { border = "rounded" }
-)
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.buf.signature_help,
+    { border = border_style }
+  )
 
-vim.diagnostic.config {
-  float = { border = "rounded" },
-}
+  vim.diagnostic.config {
+    float = { border = border_style },
+  }
+end
