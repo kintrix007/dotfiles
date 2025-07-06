@@ -23,6 +23,7 @@ local linters_by_ft = {
   clojure = { "clj-kondo" },
   janet = { "janet" },
   sql = { "sqlfluff" },
+  rust = { "clippy" },
 }
 
 local triggers = {
