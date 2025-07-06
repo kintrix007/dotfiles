@@ -12,7 +12,7 @@ local linters_by_ft = {
   typescriptreact = { "eslint" },
   python = { "flake8" },
   gdscript = { "gdlint" },
-  html = { "tidy" },
+  html = { "tidy", "cspell" },
   closure = { "joker" },
   -- Bash Language Server already uses it by default
   -- sh = { "shellcheck" },
@@ -38,6 +38,13 @@ local triggers = {
 
 -- Override sqlfluff args to NOT specify dialect
 lint.linters.sqlfluff.args = { "lint", "--format=json" }
+
+lint.linters.cspell = require("lint.util").wrap(
+  lint.linters.cspell, function(diagnostic)
+    diagnostic.severity = vim.diagnostic.severity.HINT
+    return diagnostic
+  end
+)
 
 local function is_executable(path)
   return vim.fn.executable(path) == 1
