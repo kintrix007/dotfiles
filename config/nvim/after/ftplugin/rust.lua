@@ -17,4 +17,13 @@ vim.lsp.start({
   cmd = { "rust-analyzer" },
   root_dir = root_dir,
   single_file_support = single_file_support,
+  settings = {
+    ["rust-analyzer"] = {
+      completion = {
+        callable = {
+          snippets = "none",
+        },
+      },
+    },
+  },
 })
