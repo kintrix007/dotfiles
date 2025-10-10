@@ -19,13 +19,13 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-8", "utf-16" }
 
--- vim.lsp.start({
---   name = "Tinymist Language Server",
---   cmd = { "tinymist", "lsp" },
---   root_dir = root_dir,
---   single_file_support = single_file_support,
---   settings = {
---     formatterMode = "typstyle",
---     exportPdf = "never",
---   },
--- })
+vim.lsp.start({
+  name = "Tinymist Language Server",
+  cmd = { "tinymist", "lsp" },
+  root_dir = root_dir,
+  single_file_support = single_file_support,
+  settings = {
+    formatterMode = "typstyle",
+    exportPdf = "never",
+  },
+})
