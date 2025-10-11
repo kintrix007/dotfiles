@@ -22,7 +22,8 @@ local function setup_codelens(event)
   vim.api.nvim_set_hl(0, "LspCodeLens", {
     underdouble = true,
     italic = true,
-    sp = "#AADDE8",
+    fg = "#727169",
+    sp = "#727169",
   })
 
   vim.lsp.codelens.refresh { bufnr = event.buf }
