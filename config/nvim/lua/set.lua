@@ -35,7 +35,7 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 500
 
 local textwidth = 80
 -- vim.opt.textwidth = textwidth
