@@ -2,13 +2,43 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show [E]rr
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [d]iagnostic" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [d]iagnostic" })
 
+local function new_buffer_mapper(bufnr)
+  return function(mode, bind, action, opts)
+    opts["buffer"] = bufnr
+    vim.keymap.set(mode, bind, action, opts)
+  end
+end
+
+local function setup_codelens(event)
+  local triggers = { "BufEnter", "BufWinEnter", "InsertLeave", "TextChanged" }
+  vim.api.nvim_create_autocmd(triggers, {
+    buffer = event.buf,
+    desc = "Make sure the codelens are up-to-date",
+    callback = function()
+      vim.lsp.codelens.refresh { bufnr = event.buf }
+    end,
+  })
+
+  vim.api.nvim_set_hl(0, "LspCodeLens", {
+    underdouble = true,
+    italic = true,
+    sp = "#AADDE8",
+  })
+
+  vim.lsp.codelens.refresh { bufnr = event.buf }
+  local codelens = vim.lsp.codelens.get(event.buf)
+  vim.lsp.codelens.display(codelens, event.buf, event.data.client_id)
+
+  local buffermap = new_buffer_mapper(event.buf)
+  buffermap("n", "gla", vim.lsp.codelens.run, { desc = "Code[l]ens: [A]ccept" })
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "LSP keybinds",
   callback = function(event)
-    local buffermap = function(mode, bind, action, opts)
-      opts["buffer"] = event.buf
-      vim.keymap.set(mode, bind, action, opts)
-    end
+    local buffermap = new_buffer_mapper(event.buf)
+
+    setup_codelens(event)
 
     buffermap("i", "<C-Space>", "<C-x><C-o>", { desc = "Trigger code completion" })
 
@@ -130,7 +160,7 @@ local function tab_prev()
     return "<Up>"
   end
 
-  return "<Tab>"
+  return "<S-Tab>"
 end
 
 local function complete()
