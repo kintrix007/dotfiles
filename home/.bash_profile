@@ -8,3 +8,6 @@
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+
+# Disable .NET telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
