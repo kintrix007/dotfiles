@@ -21,8 +21,6 @@ if not single_file_support and root_dir == nil then
   return
 end
 
-print("Loading OmniSharp...")
-
 local pid = vim.fn.getpid()
 
 vim.lsp.start({
