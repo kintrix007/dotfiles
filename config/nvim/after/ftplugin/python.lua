@@ -12,6 +12,9 @@ vim.lsp.start({
   cmd = { "pyright-langserver", "--stdio" },
   root_dir = root_dir,
   single_file_support = true,
+  on_attach = function()
+    print("Attached pyright.")
+  end,
 
   settings = {
     python = {
