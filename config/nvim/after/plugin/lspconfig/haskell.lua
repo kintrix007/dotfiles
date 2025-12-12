@@ -1,6 +1,5 @@
-local lspconfig = require("lspconfig")
-
-lspconfig.hls.setup {
+vim.lsp.enable("hls")
+vim.lsp.config("hls", {
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
   single_file_support = true,
   settings = {
@@ -26,4 +25,4 @@ lspconfig.hls.setup {
       },
     },
   },
-}
+})

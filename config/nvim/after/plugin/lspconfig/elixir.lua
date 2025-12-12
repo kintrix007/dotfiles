@@ -1,9 +1,9 @@
-local lspconfig = require("lspconfig")
+vim.lsp.enable("elixirls")
 
-lspconfig.elixirls.setup {
+vim.lsp.config("elixirls", {
   cmd = { "elixir-ls" },
   single_file_support = true,
   on_attach = function()
     print("Elixir LSP attached")
   end
-}
+})

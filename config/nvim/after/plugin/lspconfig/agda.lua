@@ -1,7 +1,6 @@
-local lspconfig = require("lspconfig")
-
--- lspconfig.agda_ls.setup {
---   on_attach = function()
---     print "Attached Agda LS"
---   end
--- }
+vim.lsp.enable("agda_ls")
+vim.lsp.config("agda_ls", {
+  on_attach = function()
+    print "Attached Agda LS"
+  end
+})

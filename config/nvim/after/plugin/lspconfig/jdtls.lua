@@ -1,6 +1,7 @@
 local lspconfig = require("lspconfig")
 
-lspconfig.jdtls.setup {
+vim.lsp.enable("jdtls")
+vim.lsp.config("jdtls", {
   settings = {
     org = {
       eclipse = {
@@ -17,4 +18,4 @@ lspconfig.jdtls.setup {
       },
     },
   },
-}
+})
