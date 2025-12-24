@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-packages=`xbps-install -Sun | tr -s " " | cut -d' ' -f2 | tr $'\n' ' '`
+set -euo pipefail
+
+packages="$(xbps-install -Sun | tr -s " " | cut -d' ' -f2 | tr $'\n' ' ')"
 if [[ "$1" == "-c" ]] || [[ "$1" == "--count" ]]; then
-	echo $packages | wc -w
+	echo "$packages" | wc -w
 else
-	echo $packages
+	echo "$packages"
 fi

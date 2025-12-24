@@ -1,88 +1,60 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-FILEPATH="$(readlink -f "${BASH_SOURCE:-$0}")"
-SRC="$(dirname "$FILEPATH")"
+EXECUTABLE="${BASH_SOURCE:-$0}"
+ROOT="$(dirname "$(readlink -f "$EXECUTABLE")")"
 
-function help() {
-  echo "Usage: ./install.sh [-h | --help] [-l | --link-only] [-s | --setup-only]"
-  echo ""
-  echo "Explanation of the options:"
-  echo ""
-  echo "   --help           Show this page"
-  echo "   --link-only      Link the config files but do not run their setup"
-  echo "                    scripts"
-  echo "   --setup-only     Run the setup scripts without symlinking any files"
+function usage() {
+  cat <<EOF
+  Usage: $EXECUTABLE [-h | --help]
+  
+  Options:
+     -h, --help        Show this page
+EOF
 }
 
-function run-setup() {
-  echo "Running config scripts..."
-  echo "---"
-  echo
+function main() {
+  POSITIONAL_ARGS=()
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+    -h | --help)
+      usage
+      exit
+      ;;
+    --*)
+      error "Unrecognised option: $1"
+      exit 1
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1")
+      shift
+      ;;
+    esac
+  done
+  set -- "${POSITIONAL_ARGS[@]}"
+  unset POSITIONAL_ARGS
 
-	for f in "$SRC"/config/*; do
-		if [[ -f "$f/.install/install.sh" ]]; then
-      BASE=$(basename "$f")
-			echo "Running '$BASE' setup scriptlet..."
-
-			pushd "$f/.install" >/dev/null
-			./install.sh
-			popd >/dev/null
-
-			echo "$BASE: Done."
-		fi
-	done
-
-  echo
-  echo "---"
-  echo "Finished running config scripts."
+  symlink-files
 }
 
 function symlink-files() {
   # Install home dotfiles
-  for f in "$SRC"/home/.*; do
+  for f in "$ROOT"/home/.*; do
     ln -siv "$f" ~/ || true
   done
 
   # Install config files
   mkdir -p ~/.config/
-  for f in "$SRC"/config/*; do
+  for f in "$ROOT"/config/*; do
     ln -siv "$f" ~/.config/ || true
   done
 
   # Install local bin
   mkdir -p ~/.local/bin
-  for f in "$SRC"/bin/*; do
+  for f in "$ROOT"/bin/*; do
     ln -siv "$f" ~/.local/bin/ || true
   done
 }
 
-SHOULD_SETUP=1
-SHOULD_LINK=1
-while true; do
-  case "$1" in
-    -h | --help)
-      help
-      exit
-      ;;
-    -s | --setup-only)
-      shift
-      SHOULD_LINK=0
-      ;;
-    -l | --link-only)
-      shift
-      SHOULD_SETUP=0
-      ;;
-    *)
-      break
-      ;;
-  esac
-done
-
-if [[ $SHOULD_SETUP == 0 ]] && [[ $SHOULD_LINK == 0 ]]; then
-  echo "The options --link-only and --setup-only are mutually exclusive."
-fi
-
-[[ $SHOULD_LINK == 1 ]] && symlink-files
-[[ $SHOULD_SETUP == 1 ]] && run-setup
+main "$@"

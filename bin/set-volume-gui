@@ -1,5 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-current=`pamixer --get-volume`
-new_val=`zenity --scale --value=$current --text=volume --min-value=0 --max-value=100`
-[[ -n "$new_val" ]] && pamixer --set-volume $new_val
+set -euo pipefail
+
+current="$(pamixer --get-volume)"
+new_val="$(zenity --scale --value="$current" --text=volume --min-value=0 --max-value=100)"
+[[ -n "$new_val" ]] && pamixer --set-volume "$new_val"

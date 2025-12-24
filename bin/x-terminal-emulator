@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 # For apps that expect debian's 'x-terminal-emulator'
 
@@ -6,7 +8,7 @@
 # detecting the default terminal emulator
 
 if [[ -n "$TERMINAL" ]]; then
-	$TERMINAL
+  $TERMINAL
 else
-	exit 1
+  exit 1
 fi

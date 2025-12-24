@@ -1,6 +1,6 @@
 # Notes
 
-# Swap Esc and Caps Lock keys
+## Swap Esc and Caps Lock keys
 
 **Disclaimer**: Make sure to *add* this to the xbk-options list, and not
 overwrite the whole list with just this value.

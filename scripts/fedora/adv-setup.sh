@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 sudo dnf install -y nodejs python3-pip
 
 (sudo dnf remove -y firefox

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Add GPG key
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 

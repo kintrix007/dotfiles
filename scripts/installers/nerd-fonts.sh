@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if [ ! -d ~/bin/nerd-fonts ]; then
   mkdir -p ~/bin/
   pushd >/dev/null ~/bin/

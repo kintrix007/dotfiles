@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if [ ! -d /nix ]; then
     sh <(curl -L https://nixos.org/nix/install) --no-daemon
     # ? Or alternatively, the following.

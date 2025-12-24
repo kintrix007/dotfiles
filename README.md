@@ -1,17 +1,18 @@
-# Dotfiles a la kintrix007
+# Dotfiles
 
 ## Purpose
 
-Like most people, I do not want to redo the configuration of all the software I
-use, so instead I decided to make my dotfiles public. This way it is super easy
-to set up a new computer the way I like it, because I can just clone my dotfiles
-repo and that includes every config I want.
+Sync configs between machines.
 
-## Plans
+I decided to make this repo public because:
 
-Currently, all the symlinks are put into place by my (very crude) custom script,
-`install.sh`. While this does work and allows quite a bit of personalization
-with regards to the installation process, I wanna explore GNU `stow` as an
-alternative. Coincidentally, my install script already does something very
-similar to GNU `stow`, so maybe it would be possible to get rid of all the
-custom scripting and use it as a pre-existing solution.
+- This way it is super easy to get my configs on a new machine
+- Someone else might be able to learn something from it? idk
+
+## TODO
+
+- Look into a tool to put the symlinks in place for me
+
+Currently, all the symlinks are put into place by my a custom script:
+`install.sh`. While this is very extensible, GNU `stow` is tried and tested.
+Maybe I could get the same done without maintaining a Bash script?

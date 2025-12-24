@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if ! which v >/dev/null 2>&1; then
   mkdir -p ~/bin/
   pushd ~/bin/ >/dev/null
