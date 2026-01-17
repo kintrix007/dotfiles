@@ -16,7 +16,7 @@ WordModeBrahmic=false
 InvertSelectionColors=false
 Name=default
 Parent=FALLBACK/
-TerminalCenter=true
+TerminalCenter=false
 TerminalColumns=80
 TerminalRows=24
 
