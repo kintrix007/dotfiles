@@ -1,19 +1,20 @@
 [user]
-name=kintrix
-email=sourcehut.ungraded024@passmail.net
+	name=kintrix
+	email=sourcehut.ungraded024@passmail.net
 [pull]
-rebase=true
+	rebase=true
 [init]
-defaultBranch=master
+	defaultBranch=master
 [core]
-autocrlf=input
+	autocrlf=input
 [alias]
-unstage=restore --staged
+	unstage=restore --staged
 [merge]
-tool=nvimdiff3
-guitool=meld
+	tool=nvimdiff3
+	guitool=meld
+	conflictStyle=zdiff3
 
 [re.sonny.Commit]
-title-length-hint=50
-body-length-wrap=72
-auto-capitalize-title=true
+	title-length-hint=50
+	body-length-wrap=72
+	auto-capitalize-title=true
