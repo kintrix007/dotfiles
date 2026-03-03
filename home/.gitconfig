@@ -13,6 +13,10 @@
 	tool=nvimdiff3
 	guitool=meld
 	conflictStyle=zdiff3
+[core]
+	askpass=
+[credential]
+	helper=cache
 
 [re.sonny.Commit]
 	title-length-hint=50
