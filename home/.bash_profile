@@ -11,3 +11,6 @@ export HISTFILESIZE=10000
 
 # Disable .NET telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# For the fake VB interpreter thing
+export VB_INTERPRETER_PROJECT_PATH="$HOME/code/vb-interpreter/src"
