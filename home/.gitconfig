@@ -7,6 +7,7 @@
 	defaultBranch=master
 [core]
 	autocrlf=input
+	safecrlf=true
 [alias]
 	unstage=restore --staged
 [merge]
@@ -17,6 +18,8 @@
 	askpass=
 [credential]
 	helper=cache
+[diff "exif"]
+	textconv = exiftool # Add '*.png diff=exif' to .gitattributes
 
 [re.sonny.Commit]
 	title-length-hint=50

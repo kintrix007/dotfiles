@@ -1,0 +1,10 @@
+# Diff the exif data, instead of just binary
+*.png       -text diff=exif
+*.jpg       -text diff=exif
+*.jpeg      -text diff=exif
+*.gif       -text diff=exif
+
+# Respect Windows, I guess...
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+*.ps1       text eol=crlf
