@@ -1,5 +1,8 @@
 # .bash_aliases
 
+# When supplying multiple files, open them in separate tabs
+alias vim='nvim -p'
+
 # Some generic useful aliases
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
@@ -37,6 +40,7 @@ alias :wq='idot'
 
 alias nix-pd='nix develop github:headblockhead/nix-playdatesdk && echo'
 alias nix-shell-unstable='nix-shell -I https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz'
+alias nixpkgs-commit='git -C ~/src/nixpkgs/ log | head -n1 | cut -d" " -f2'
 
 alias espresso='wine ~/bin/espresso/bin/espresso.exe'
 alias espresso-gui='wine ~/bin/espresso/espresso-gui.exe'
