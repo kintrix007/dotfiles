@@ -1,4 +1,0 @@
-[submodule "nixos-config"]
-	path = nixos-config
-	url = https://git.sr.ht/~kintrix/nixos-config
-	branch = master
