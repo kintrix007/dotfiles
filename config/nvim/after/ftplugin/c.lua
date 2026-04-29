@@ -1,7 +1,7 @@
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 
 local root_files = {
   ".clangd",
@@ -15,9 +15,15 @@ local root_files = {
 local paths = vim.fs.find(root_files, { upward = true, stop = vim.env.HOME })
 local root_dir = vim.fs.dirname(paths[1])
 
+local cc_path = vim.fn.exepath("cc")
+
 vim.lsp.start({
   name = "Clangd Language Server",
-  cmd = { "clangd" },
+  cmd = {
+    "clangd",
+    -- Adding the query-driver fixes issues with not finding <stdio.h>
+    "--query-driver=" .. cc_path
+  },
   root_dir = root_dir,
   single_file_support = true,
 
