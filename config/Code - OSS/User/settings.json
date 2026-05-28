@@ -3,7 +3,7 @@
   "terminal.integrated.defaultProfile.linux": "bash",
 
   "workbench.colorTheme": "One Dark Pro Mix",
-  "editor.fontFamily": "'FiraCode Nerd Font', 'Fira Code', 'JetBrainsMono Nerd Font', 'JetBrains Mono', 'Droid Sans Mono', monospace",
+  "editor.fontFamily": "'Comic Mono', 'FiraCode Nerd Font', 'Fira Code', 'JetBrainsMono Nerd Font', 'JetBrains Mono', 'Droid Sans Mono', monospace",
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font', 'Fira Code', 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace",
 
   "editor.lineNumbers": "relative",
