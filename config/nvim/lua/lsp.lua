@@ -10,13 +10,8 @@ local function new_buffer_mapper(bufnr)
 end
 
 local function setup_codelens(event)
-  local triggers = { "BufEnter", "BufWinEnter", "InsertLeave", "TextChanged" }
-  vim.api.nvim_create_autocmd(triggers, {
-    buffer = event.buf,
-    desc = "Make sure the codelens are up-to-date",
-    callback = function()
-      vim.lsp.codelens.refresh { bufnr = event.buf }
-    end,
+  vim.lsp.codelens.enable(true, {
+    bufnr = event.buf,
   })
 
   vim.api.nvim_set_hl(0, "LspCodeLens", {
@@ -26,9 +21,7 @@ local function setup_codelens(event)
     sp = "#727169",
   })
 
-  vim.lsp.codelens.refresh { bufnr = event.buf }
-  local codelens = vim.lsp.codelens.get(event.buf)
-  vim.lsp.codelens.display(codelens, event.buf, event.data.client_id)
+  -- local codelens = vim.lsp.codelens.get { bufnr = event.buf }
 
   local buffermap = new_buffer_mapper(event.buf)
   buffermap("n", "gla", vim.lsp.codelens.run, { desc = "Code[l]ens: [A]ccept" })
@@ -54,6 +47,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- buffermap("n", "<F3>", vim.lsp.buf.format, { desc = "Format buffer" })
     buffermap("n", "<F4>", vim.lsp.buf.code_action, { desc = "Code action" })
     buffermap("n", "<leader>ff", vim.lsp.buf.format, { desc = "[F]ormat buffer" })
+    buffermap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
   end,
 })
 
