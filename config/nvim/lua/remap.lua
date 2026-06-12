@@ -49,8 +49,8 @@ vim.keymap.set({ "n", "v" }, "<leader>P", [["+P]], { desc = "[P]aste from system
 -- User "very magic" mode by default for searching and 'Find & Replace'
 vim.keymap.set("n", "<leader>r", [[:%s/\v//g<Left><Left><Left>]], { desc = "[R]eplace" })
 vim.keymap.set("v", "<leader>r", [[:s/\%V\v//g<Left><Left><Left>]], { desc = "[R]eplace in [V]isual Selection" })
-vim.keymap.set("n", "/", "/\\v")
-vim.keymap.set("v", "/", "/\\v")
+-- vim.keymap.set("n", "/", "/\\v")
+-- vim.keymap.set("v", "/", "/\\v")
 
 -- Git
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "[G]it [s]tatus" })
