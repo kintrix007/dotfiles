@@ -13,10 +13,15 @@ local root_files = {
 local paths = vim.fs.find(root_files, { upward = true, stop = vim.env.HOME })
 local root_dir = vim.fs.dirname(paths[1])
 
-local home_manager_config_path = "~/.config/home-manager/home.nix"
+local home_manager_config_path = vim.env.HOME .. "/.config/home-manager/home.nix"
+
+local nixpkgs_path = vim.env.HOME .. "/nixos-config/nixpkgs"
+
+print(nixpkgs_path)
 
 local nixd_options = {
   nixos = {
+    expr = string.format("(import %s {}).options", nixpkgs_path)
     -- expr = "(import <nixpkgs/modules> { }).options",
     -- ? For flake setup?
     -- expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.k-on.options',
@@ -43,8 +48,8 @@ vim.lsp.start({
   settings = {
     nixd = {
       nixpkgs = {
-        -- expr = "import <nixpkgs> { }",
-        expr = "<nixpkgs>",
+        -- expr = "(import <nixpkgs> { }).pkgs",
+        expr = string.format("(import %s { }).pkgs", nixpkgs_path),
       },
 
       formatting = {
