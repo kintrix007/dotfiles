@@ -1,0 +1,57 @@
+# Hide window borders
+window-decoration = none
+
+# Give me my block cursor back
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Aliasing my sudo to something else is very sus. Don't.
+shell-integration-features = no-sudo
+
+# Yup, got used to it from Konsole
+mouse-hide-while-typing = true
+
+# I just want to select text
+cursor-click-to-move = false
+
+# No window transparency
+background-opacity = 1
+background-blur = false
+
+# Best fonts
+font-family = FiraCode Nerd Font
+font-family = Fira Code
+font-family = JetBrainsMono Nerd Font
+font-family = Jetbrains Mono
+font-family = Source Code Pro
+font-family = Noto Color Emoji
+font-size = 13
+
+# No padding on top/left of the terminal
+window-padding-balance = false
+
+# Comment out to disable ligatures:
+# font-feature = -calt, -liga, -dlig
+# Or disable only programming ligatures:
+# font-feature = -calt
+
+# Just like my neovim
+theme = Kanagawa Wave
+# theme = 0x96f
+# theme = Breeze  # Doesn't look like Konsole by default
+
+# I want to be able to scroll MANY lines
+scrollback-limit = 10000
+
+# The scrollbar is actually very gentle to begin with. Nice!
+# scrollbar = never
+
+
+##############
+#  KEYBINDS  #
+##############
+
+
+# Remove built-in keybind for fullscreen
+keybind = ctrl+enter=unbind
