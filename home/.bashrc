@@ -20,8 +20,13 @@ __ps1_get_git_branch() {
   if git branch >/dev/null 2>&1; then
     line=$(git branch 2>/dev/null | grep '^\*')
     local branch=${line##\* }
-    echo "($branch)"
+    echo "($branch) "
   fi
+}
+
+# Helper function to get the current time
+__ps1_get_timestamp() {
+  printf "\e[34;2;3m[%s]\e[0m" "$(date '+%H:%M:%S')"
 }
 
 # Helper function to display success of last command
@@ -56,7 +61,8 @@ __ps1_get_user_or_shell() {
 PROMPT_COMMAND+=('CMD_SUCCESS=$?')
 PS1='╭──\[\e[1m\]($(__ps1_get_user_or_shell)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]) '
 PS1+='$(__ps1_get_cmd_success) '
-PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\] '
+PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\]'
+PS1+='$(__ps1_get_timestamp) '
 PS1+=$'\n╰─\[\e[0;1m\]$\[\e[0m\] '
 
 # Use the same PS1 variable for nix shells as well
