@@ -1,7 +1,7 @@
 # .bash_aliases
 
 # When supplying multiple files, open them in separate tabs
-alias vim='nvim -p'
+alias vim='vim -p'
 
 # Some generic useful aliases
 alias grep='grep --color=auto'
