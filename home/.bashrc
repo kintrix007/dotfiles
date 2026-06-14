@@ -31,10 +31,12 @@ __ps1_get_timestamp() {
 
 # Helper function to display success of last command
 __ps1_get_cmd_success() {
+  # printf "\e[1;92m✔\e[0m"
+  # printf "\e[1;91m✘\e[0m"
   if [[ "$CMD_SUCCESS" == 0 ]]; then
-    printf "\e[1;92m✔\e[0m"
+    printf "\e[0;2;92mok\e[0m"
   else
-    printf "\e[1;91m✘\e[0m"
+    printf "\e[0;1;91m✘%d\e[0m" "$CMD_SUCCESS"
   fi
 }
 
