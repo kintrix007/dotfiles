@@ -4,10 +4,8 @@ window-decoration = none
 # Give me my block cursor back
 cursor-style = block
 cursor-style-blink = false
-shell-integration-features = no-cursor
-
-# Aliasing my sudo to something else is very sus. Don't.
-shell-integration-features = no-sudo
+shell-integration-features = no-cursor, no-sudo
+# ^ Aliasing my sudo to something else is very sus. Don't.
 
 # Yup, got used to it from Konsole
 mouse-hide-while-typing = true
