@@ -14,6 +14,13 @@ if [[ -z ${EDITOR+x} ]]; then
   export EDITOR=vim
 fi
 
+function which() {
+  (alias; declare -f) |
+    command which --tty-only --read-alias --read-functions \
+      --show-tilde --show-dot "$@"
+}
+export -f which
+
 # Helper function to display git branch in shell prompt
 __ps1_get_git_branch() {
   local line
