@@ -36,6 +36,7 @@ window-padding-balance = false
 
 # Just like my neovim
 theme = Kanagawa Wave
+# theme = 3024 Day
 # theme = 0x96f
 # theme = Breeze  # Doesn't look like Konsole by default
 
