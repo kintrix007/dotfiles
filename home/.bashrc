@@ -77,10 +77,10 @@ PS1+=$'\n╰─\[\e[0;1m\]$\[\e[0m\] '
 # Use the same PS1 variable for nix shells as well
 export NIX_SHELL_PRESERVE_PROMPT=1
 
-# Hook direnv into the shell
-if which direnv >/dev/null 2>&1; then
-  eval "$(direnv hook bash)"
-fi
+# NOTE: This is already handled by the NixOS config. Do not enable!
+# if which direnv >/dev/null 2>&1; then
+#   eval "$(direnv hook bash)"
+# fi
 
 # Enable Vim mode on the prompt
 # set -o vi
