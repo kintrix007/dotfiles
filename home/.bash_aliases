@@ -8,6 +8,9 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -lA'
 
+# Make it ALWAYS interactive
+alias rm='rm -i'
+
 _ips() {
   ip -4 -j a | jq -r '. as $all | .[] | .ifname + ((([$all[].ifname] | max | length + 1) - (.ifname | length)) * " ") + " - " + .addr_info[].local'
 }
