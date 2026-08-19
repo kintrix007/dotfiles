@@ -18,7 +18,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.smartindent = true
+-- Outdents lines starting with a hash sign (#). I do NOT want this.
+vim.opt.smartindent = false
 
 vim.opt.wrap = false
 
