@@ -39,11 +39,16 @@ if vim.fn.filereadable(vim.fn.expand(home_manager_config_path)) == 1 then
   }
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = false
+
 vim.lsp.start({
   name = "Nixd Language Server",
   cmd = { "nixd" },
   root_dir = root_dir,
   single_file_support = true,
+
+  capabilities = capabilities,
 
   settings = {
     nixd = {

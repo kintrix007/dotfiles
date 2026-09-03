@@ -14,6 +14,9 @@ local root_files = {
   ".git",
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = false
+
 local paths = vim.fs.find(root_files, { upward = true, stop = vim.env.HOME })
 local root_dir = vim.fs.dirname(paths[1])
 
@@ -29,7 +32,16 @@ vim.lsp.start({
   root_dir = root_dir,
   single_file_support = true,
 
+  capabilities = capabilities,
+
   settings = {
+    textDocument = {
+      completion = {
+        completionItem = {
+          snippetSupport = true,
+        }
+      }
+    }
     -- TODO: Figure out how to set indent to 4 spaces
   }
 })
