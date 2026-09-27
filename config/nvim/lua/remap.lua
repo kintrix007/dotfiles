@@ -9,6 +9,10 @@ vim.keymap.set("n", "<f5>", ":!./%<CR>", { desc = "Run Current File" })
 vim.keymap.set("n", "<M-j>", "gj", { desc = "Go down an editor line" })
 vim.keymap.set("n", "<M-k>", "gk", { desc = "Go up an editor line" })
 
+-- NOTE:
+-- <C-y> and <C-e> scroll one line up and down
+-- <C-u> and <C-d> scroll half a screen up and down
+
 -- Get out of my life
 -- I don't want most of what I have typed to disappear when
 -- I accidentally hit <C-u> instead of <C-y>
