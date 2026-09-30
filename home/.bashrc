@@ -72,7 +72,7 @@ PS1='╭──\[\e[1m\]($(__ps1_get_user_or_shell)\[\e[0m\]@\[\e[1;92m\]\h \[\e[
 PS1+='$(__ps1_get_cmd_success) '
 PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\]'
 PS1+='$(__ps1_get_timestamp) '
-PS1+=$'\n╰─\[\e[0;1m\]$\[\e[0m\] '
+PS1+=$'\n''╰─\[\e[0;1m\]$\[\e[0m\] '
 
 # Use the same PS1 variable for nix shells as well
 export NIX_SHELL_PRESERVE_PROMPT=1
