@@ -14,6 +14,11 @@ if [[ -z ${EDITOR+x} ]]; then
   export EDITOR=vim
 fi
 
+if [[ -z ${LESS+x} ]]; then
+  # Handle raw control chars
+  export LESS="-R"
+fi
+
 function which() {
   (alias; declare -f) |
     command which --tty-only --read-alias --read-functions \
