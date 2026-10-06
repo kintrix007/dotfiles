@@ -19,12 +19,22 @@ if [[ -z ${LESS+x} ]]; then
   export LESS="-R"
 fi
 
+# Make sure which reads more than just the PATH
 function which() {
   (alias; declare -f) |
     command which --tty-only --read-alias --read-functions \
       --show-tilde --show-dot "$@"
 }
 export -f which
+
+# Create directory and cd into it
+function c() {
+  # shellcheck disable=SC2199,SC2164
+  if ! [[ -d "${@: -1}" ]]; then
+    mkdir "$@" && cd "$_"
+  fi
+}
+export -f c
 
 # Helper function to display git branch in shell prompt
 __ps1_get_git_branch() {
