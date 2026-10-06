@@ -39,10 +39,46 @@ export -f c
 # Helper function to display git branch in shell prompt
 __ps1_get_git_branch() {
   local line
+  # FIXME: Do it with a single 'git' invocation
   if git branch >/dev/null 2>&1; then
     line=$(git branch 2>/dev/null | grep '^\*')
     local branch=${line##\* }
-    echo "($branch) "
+    printf "\e[0;3;33m(%s) " "$branch"
+  fi
+}
+
+# Helper function to get the current jj change and commit IDs
+__ps1_get_jj_current_change() {
+  local cur
+  cur="$(jj log -r '@' --color always --no-graph --no-pager)"
+  # shellcheck disable=SC2181
+  [[ "$?" != 0 ]] && return
+
+  <<<"$cur" head -1 | cut -d' ' -f1,5 |
+    xargs printf "\e[0;33;1;2;3mjj\e[0;3m(%s %s\e[0;3m) "
+}
+
+# Figure out if PWD is in a jujutsu repository.
+# We do this because `jj status >/dev/null` very slow, about 100ms even
+# when just reporting "not a jj repo".
+__ps1_is_jj_repo() {
+  local dir="$PWD"
+  while [[ "$dir" != "/" ]]; do
+    if [[ -d "$dir"/.jj ]]; then
+      return 0
+    fi
+    dir="$(dirname "$dir")"
+  done
+
+  return 1
+}
+
+# Show jj change info, if in a jj repo; otherwise show git branch
+__ps1_get_vcs_info() {
+  if __ps1_is_jj_repo; then
+    __ps1_get_jj_current_change
+  else
+    __ps1_get_git_branch
   fi
 }
 
@@ -85,7 +121,7 @@ __ps1_get_user_or_shell() {
 PROMPT_COMMAND+=('CMD_SUCCESS=$?')
 PS1='╭──\[\e[1m\]($(__ps1_get_user_or_shell)\[\e[0m\]@\[\e[1;92m\]\h \[\e[94m\]\W\[\e[0m\]\[\e[0;1m\]) '
 PS1+='$(__ps1_get_cmd_success) '
-PS1+='\[\e[0;3;33m\]$(__ps1_get_git_branch)\[\e[0m\]'
+PS1+='$(__ps1_get_vcs_info)\[\e[0m\]'
 PS1+='$(__ps1_get_timestamp) '
 PS1+=$'\n''╰─\[\e[0;1m\]$\[\e[0m\] '
 
