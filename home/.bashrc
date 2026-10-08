@@ -50,12 +50,12 @@ __ps1_get_git_branch() {
 # Helper function to get the current jj change and commit IDs
 __ps1_get_jj_current_change() {
   local cur
-  cur="$(jj log -r '@' --color always --no-graph --no-pager)"
+  cur="$(jj log -r '@' --color always --no-graph --no-pager \
+    -T 'label("working_copy", separate(" ", change_id.shortest(8), commit_id.shortest(8)))')"
   # shellcheck disable=SC2181
   [[ "$?" != 0 ]] && return
 
-  <<<"$cur" head -1 | cut -d' ' -f1,5 |
-    xargs printf "\e[0;33;1;2;3mjj\e[0;3m(%s %s\e[0;3m) "
+  <<<"$cur" xargs printf "\e[0;33;1;2;3mjj\e[0;3m(%s %s\e[0;3m) "
 }
 
 # Figure out if PWD is in a jujutsu repository.
