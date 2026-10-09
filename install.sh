@@ -38,23 +38,32 @@ function main() {
   symlink-files
 }
 
+function setup() {
+  local target="$1"
+  shift
+
+  local dir
+  mkdir -p "$target"
+  for f in "$@"; do
+    dir="$(dirname "$f")"
+    if [[ -x "$dir"/setup ]]; then
+      (cd "$dir" && "$dir"/setup)
+      echo "Executed '$dir/setup'."
+    fi
+
+    ln -siv "$f" "$target" || true
+  done
+}
+
 function symlink-files() {
-  # Install home dotfiles
-  for f in "$ROOT"/home/.*; do
-    ln -siv "$f" ~/ || true
-  done
+  # Home dotfiles
+  setup ~/ "$ROOT"/home/.*
 
-  # Install config files
-  mkdir -p ~/.config/
-  for f in "$ROOT"/config/*; do
-    ln -siv "$f" ~/.config/ || true
-  done
+  # .config
+  setup ~/.config "$ROOT"/config/*
 
-  # Install local bin
-  mkdir -p ~/.local/bin
-  for f in "$ROOT"/bin/*; do
-    ln -siv "$f" ~/.local/bin/ || true
-  done
+  # Scripts
+  setup ~/.local/bin/ "$ROOT"/bin/* 
 }
 
 main "$@"
