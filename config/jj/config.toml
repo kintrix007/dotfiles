@@ -3,3 +3,56 @@
 [user]
 name = "boldidev"
 email = "dev@boldi.dev"
+
+[colors]
+decor = "#666666" 
+
+[templates]
+log = 'my_short_commit'
+
+[template-aliases]
+# Function 'try' requires jj >0.44
+'my_short_commit_header' = 'my_short_commit_header(self)'
+'my_short_commit_header(commit)' = '''
+separate(" ",
+  commit.change_id().shortest(8),
+  format_short_signature(commit.author()),
+  commit.tags(),
+  commit.working_copies(),
+  try(
+    commit.bookmarks().first(),
+    commit.commit_id().shortest(8),
+  ),
+  format_commit_labels(commit),
+  if(config("ui.show-cryptographic-signatures").as_boolean(),
+    format_short_cryptographic_signature(commit.signature())
+  ),
+)
+'''
+
+my_short_commit = 'my_short_commit(self)'
+'my_short_commit(commit)' = '''
+if(commit.root(),
+  format_root_commit(commit),
+  label(
+    separate(" ",
+      if(commit.current_working_copy(), "working_copy"),
+      if(commit.immutable(), "immutable", "mutable"),
+      if(commit.conflict(), "conflicted"),
+    ),
+    separate("\n",
+      label("decor", "╭") ++ my_short_commit_header(commit),
+      label("decor", "╰─ ") ++ separate(" ",
+        if(commit.empty(), empty_commit_marker),
+        if(commit.description(),
+          commit.description().first_line(),
+          label(if(commit.empty(), "empty"), description_placeholder),
+        ),
+      ),
+    ),
+  ) ++ "\n"
+)
+'''
+
+[ui]
+default-command = "log"
