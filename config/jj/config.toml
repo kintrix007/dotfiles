@@ -20,7 +20,7 @@ separate(" ",
   commit.tags(),
   commit.working_copies(),
   try(
-    commit.bookmarks().first(),
+    commit.bookmarks(),
     commit.commit_id().shortest(8),
   ),
   format_commit_labels(commit),
